@@ -185,7 +185,7 @@ $('#frmRegistro').bootstrapValidator({
                 notEmpty: { message:'El campo nombre es obligatorio'}
             }
         },
-         domicilio: {
+    /*     domicilio: {
             validators: {
                 stringLength: { min: 1 },
                 stringLength: { max: 45 },
@@ -206,7 +206,7 @@ $('#frmRegistro').bootstrapValidator({
                     message: 'Numero no Valido'
                 }
             }
-        },
+        },*/
     }
 }).on('success.form.bv', function (e) {
     $('#success_message').slideDown({ opacity: 'show' }, 'slow');

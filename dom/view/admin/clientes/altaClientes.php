@@ -179,28 +179,6 @@ $('#frmRegistro').bootstrapValidator({
                 notEmpty: { message:'El campo nombre es obligatorio'}
             }
         },
-         domicilio: {
-            validators: {
-                stringLength: { min: 1 },
-                stringLength: { max: 45 },
-                notEmpty: { message:'El campo domicilio es obligatorio'}
-            }
-        },
-         correo: {
-            validators: {
-                notEmpty: { message: 'El campo de e-mail es obligatorio' },
-               // emailAddress: { message: 'E-mail no valido' }
-            }
-        },
-        telefono: {
-            validators: {
-                notEmpty: { message: 'Este campo es obligatorio' },
-                phone: {
-                    country: 'MX',
-                    message: 'Numero no Valido'
-                }
-            }
-        },
     }
 }).on('success.form.bv', function (e) {
     $('#success_message').slideDown({ opacity: 'show' }, 'slow');
