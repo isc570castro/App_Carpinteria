@@ -1,0 +1,74 @@
+.login {
+      margin: 15px auto;
+      width: 600px;
+      padding: 30px 20px;
+      background: white;
+      border: 1px solid #c4c4c4;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  h1.registro-titulo {
+      margin: -28px 20px 25px;
+      padding: 15px 25px;
+      line-height: 30px;
+      font-size: 25px;
+      font-weight: 300;
+      color:  #f0776c;
+      text-align:left;
+      background: #f7f7f7;
+ 
+  }
+  .labDatos{
+    margin: -28px 20px 10px;
+      padding: 15px 25px;
+      line-height: 30px;
+      font-size: 17px;
+      font-weight: 300;
+      color:  #696969;
+      text-align:left;
+      
+  }
+  label.labDatos{
+    
+    padding: 15px;
+      font-size: 15px;
+      font-weight: 300;
+      color:  #696969;
+      text-align:left;
+  }
+  textarea {
+      width: 90%;
+      height: 80px;
+      margin-bottom: 23px;
+      padding-left:7px;
+      font-size: 15px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+  }
+  .txtCajas:focus {
+      border-color:#6e8095;
+      outline: none;
+    }
+    input.foto{
+      width: :90%;
+      
+      font-size: 15px;
+      font-weight: 300;
+      color:  #696969;
+      text-align:left;
+    }
+  .btnEnviar {
+      width: 20%;
+      height: 35px;
+      margin-left:405px ;
+      padding: 0;
+      font-size: 15px;
+      color: #fff;
+      text-align:center;
+      background: #f0776c;
+      border: 0;
+      border-radius: 5px;
+      cursor: pointer; 
+      outline:0;
+  }
+ 

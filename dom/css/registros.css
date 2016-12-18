@@ -1,0 +1,78 @@
+.registro {
+      margin: 20px 200px;
+      width: 650px;
+      height:410px;
+      padding: 40px 20px;
+      background: white;
+      border: 1px solid #c4c4c4;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  h1.registro-titulo {
+      margin: -28px 20px 25px;
+      padding: 15px 25px;
+      line-height: 30px;
+      font-size: 25px;
+      font-weight: 300;
+      /*color:  #f0776c;*/
+      color:#4d4d4d;
+      text-align:left;
+      background: #f7f7f7;
+  }
+  .labDatos{
+    margin: -18px 10px 10px;
+      padding: 15px 35px ;
+      line-height: 35px;
+      font-size: 15px;
+      font-weight: 300;
+      color:  #696969;
+      text-align:left;
+      margin-bottom: 15px;
+      
+  }
+  label.labDatos{
+    
+    padding: 10px 2px;
+      font-size: 15px;
+      font-weight: 300;
+      color:  #696969;
+      text-align:left;
+  }
+  .txtCajas {
+    margin-left :-30px;
+      width: 390px;
+      height: 40px;
+      margin-bottom: 15px;
+      padding-left:7px;
+      font-size: 15px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+  }
+  .txtCajas:focus {
+      border-color:#6e8095;
+      outline: none;
+    }
+  .btnTerminar {
+    margin-bottom: -15px;
+      width: 28%;
+      height: 38px;
+      margin-left:412px ;
+      padding: 0;
+      font-size: 15px;
+      color: #fff;
+      text-align:center;
+      background: #666;
+      border: 0;
+      border-radius: 5px;
+      cursor: pointer; 
+      outline:0;
+     
+  }
+  input.btnTerminar{
+background: #111;
+    background: -moz-linear-gradient(#444, #111); 
+      background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #111),color-stop(1, #444));  
+    background: -webkit-linear-gradient(#444, #111);  
+    background: -o-linear-gradient(#444, #111);
+    background: -ms-linear-gradient(#444, #111);
+    background: linear-gradient(#444, #111);  }
