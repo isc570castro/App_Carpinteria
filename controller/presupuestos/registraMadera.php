@@ -12,7 +12,7 @@
 	include "../../model/conexion.php";
 $objConex = new Conexion();
 $link=$objConex->conectarse();
-$sqlmaxRegistro= mysql_query("select max(noRegistro) from materiaPrima where idPresupuesto=$idPresupuesto", $link) or die(mysql_error());
+$sqlmaxRegistro= mysql_query("SELECT max(noRegistro) FROM materiaprima WHERE idPresupuesto=$idPresupuesto", $link) or die(mysql_error());
 $rows = mysql_fetch_array($sqlmaxRegistro);
 $noRegistro=$rows['max(noRegistro)']+1;
 $sql = mysql_query("INSERT INTO materiaPrima

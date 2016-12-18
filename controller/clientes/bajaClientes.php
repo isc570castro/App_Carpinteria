@@ -3,7 +3,7 @@
 	include "../../model/conexion.php";
 $objConex = new Conexion();
 $link=$objConex->conectarse();
-$sql = mysql_query("DELETE FROM Clientes WHERE idCliente='$idCliente'", $link) or die(mysql_error());
+$sql = mysql_query("DELETE FROM clientes WHERE idCliente='$idCliente'", $link) or die(mysql_error());
 if (!$sql){
 	die("<p>Fallo la eliminación de datos".mysql_error()."</p>");
 	mysql_close($link);

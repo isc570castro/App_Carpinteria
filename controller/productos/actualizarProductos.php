@@ -7,7 +7,7 @@
 	include "../../model/conexion.php";
 $objConex = new Conexion();
 $link=$objConex->conectarse();
-$sql = mysql_query("UPDATE Productos set descripcion='$descripcion', precio='$precio', marca='$marca', idProveedor='$idProveedor' where idProducto='$idProducto';", $link) or die(mysql_error());
+$sql = mysql_query("UPDATE productos set descripcion='$descripcion', precio='$precio', marca='$marca', idProveedor='$idProveedor' where idProducto='$idProducto';", $link) or die(mysql_error());
 if (!$sql){
 	die("<p>Fallo la actualización de datos: ".mysql_error()."</p>");
 }else{

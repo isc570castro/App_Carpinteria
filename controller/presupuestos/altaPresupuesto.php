@@ -5,7 +5,7 @@
 	include "../../model/conexion.php";
 $objConex = new Conexion();
 $link=$objConex->conectarse();
-$sacaidCliente= mysql_query("SELECT idCliente FROM Clientes WHERE nombreCliente='$nombreCliente'", $link);
+$sacaidCliente= mysql_query("SELECT idCliente FROM clientes WHERE nombreCliente='$nombreCliente'", $link);
 $rows = mysql_fetch_array($sacaidCliente); 
 $idCliente=$rows['idCliente']; 
 $sql = mysql_query("INSERT INTO Presupuesto

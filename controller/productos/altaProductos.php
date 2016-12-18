@@ -6,7 +6,7 @@
 	include "../../model/conexion.php";
 $objConex = new Conexion();
 $link=$objConex->conectarse();
-$sacaidProveedor=mysql_query("SELECT idProveedor FROM Proveedores WHERE nombreProveedor='$nombreProveedor'", $link);
+$sacaidProveedor=mysql_query("SELECT idProveedor FROM proveedores WHERE nombreProveedor='$nombreProveedor'", $link);
 $rows = mysql_fetch_array($sacaidProveedor); 
 $idProveedor=$rows['idProveedor']; 
 $sql = mysql_query("INSERT INTO Productos

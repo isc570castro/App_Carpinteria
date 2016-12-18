@@ -6,7 +6,7 @@
 	include "../../model/conexion.php";
 $objConex = new Conexion();
 $link=$objConex->conectarse();
-$idCliente=("SELECT idCliente FROM Clientes WHERE nombreCliente='$nombreCliente'");
+$idCliente=("SELECT idCliente FROM clientes WHERE nombreCliente='$nombreCliente'");
 $sql = mysql_query("INSERT INTO Presupuesto
 		VALUES (null,'$nombrePresupuesto','$descripcion','$montoTotal','$idCliente')", $link) or die(mysql_error());
 

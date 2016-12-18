@@ -4,7 +4,7 @@
 	include "../../model/conexion.php";
 $objConex = new Conexion();
 $link=$objConex->conectarse();
-$sql = mysql_query("DELETE FROM materiaPrima WHERE idPresupuesto='$idPresupuesto' and noRegistro='$noRegistro'", $link) or die(mysql_error());
+$sql = mysql_query("DELETE FROM materiaprima WHERE idPresupuesto='$idPresupuesto' and noRegistro='$noRegistro'", $link) or die(mysql_error());
 if (!$sql){
 	die("<p>Fallo la eliminación de datos".mysql_error()."</p>");
 	mysql_close($link);

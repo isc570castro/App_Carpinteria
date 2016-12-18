@@ -6,7 +6,7 @@
 	include "../../model/conexion.php";
 $objConex = new Conexion();
 $link=$objConex->conectarse();
-$sql = mysql_query("INSERT INTO Proveedores
+$sql = mysql_query("INSERT INTO proveedores
 		VALUES (null,'$nombreProveedor','$domicilio','$telefono','$correo')", $link) or die(mysql_error());
 if (!$sql){
 	die("<p>Fallo la insersion a la base de datos: ".mysql_error()."</p>");
