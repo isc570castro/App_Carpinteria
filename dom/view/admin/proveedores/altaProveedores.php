@@ -81,18 +81,18 @@ header ('Location:../../../../index.html');
              <li><a href="../clientes/altaClientes.php">Cliente</a></li>
              <li><a href="altaProveedores.php">Proveedor</a></li>
              <li><a href="../productos/altaProductos.php">Producto</a></li>
+             <li><a href="../presupuestos/generaPresupuesto.php">Presupuesto</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-file" aria-hidden="true">&nbsp; </span>Generar<span class="caret"></span></a>
           <ul class="dropdown-menu">
           <li><a href="altaProveedores.php">Abono</a></li>
-          <li><a href="../presupuestos/generaPresupuesto.php">Presupuesto</a></li>
           <li><a href="../presupuestos/showPresupuestos.php">Venta</a></li>
           <li><a href="#">Reporte de ventas</a></li>
           </ul>
         </li>
-        <li><a href="#"><span class="glyphicon glyphicon-book" aria-hidden="true">&nbsp; </span>Cuentas</a></li>
+        <li><a href="../ventas/showCuentas.php"><span class="glyphicon glyphicon-book" aria-hidden="true">&nbsp; </span>Cuentas</a></li>
         <!--<li><a href="#"><span class="glyphicon glyphicon-log-out" aria-hidden="true">&nbsp; </span><b>Cerrar sesion<b/</a></li>-->
       </ul>
        <ul class="nav navbar-nav navbar-right">
@@ -193,15 +193,15 @@ $('#frmRegistro').bootstrapValidator({
                // emailAddress: { message: 'E-mail no valido' }
             }
         },
+        */
         telefono: {
             validators: {
-                notEmpty: { message: 'Este campo es obligatorio' },
                 phone: {
                     country: 'MX',
                     message: 'Numero no Valido'
                 }
             }
-        },*/
+        },
     }
 }).on('success.form.bv', function (e) {
     $('#success_message').slideDown({ opacity: 'show' }, 'slow');

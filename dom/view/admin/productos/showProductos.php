@@ -77,7 +77,7 @@ header ('Location:../../../../index.html');
              <li><a href="../clientes/showClientes.php">Clientes</a></li>
              <li><a href="../proveedores/showProveedores.php">Proveedores</a></li>
              <li><a href="showProductos.php">Productos</a></li>
-             <li><a href="../presupuestos/showPresupuestos.php">Presupuesto</a></li>
+             <li><a href="../presupuestos/showPresupuestos.php">Presupuestos</a></li>
              <li><a href="../ventas/showVentas.php">Ventas</a></li>
           </ul>
         </li>
@@ -87,18 +87,18 @@ header ('Location:../../../../index.html');
              <li><a href="../clientes/altaClientes.php">Cliente</a></li>
              <li><a href="../proveedores/altaProveedores.php">Proveedor</a></li>
              <li><a href="altaProductos.php">Producto</a></li>
+             <li><a href="../presupuestos/generaPresupuesto.php">Presupuesto</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-file" aria-hidden="true">&nbsp; </span>Generar<span class="caret"></span></a>
           <ul class="dropdown-menu">
           <li><a href="showProductos.php">Abono</a></li>
-          <li><a href="../presupuestos/generaPresupuesto.php">Presupuesto</a></li>
           <li><a href="../presupuestos/showPresupuestos.php">Venta</a></li>
           <li><a href="#">Reporte de ventas</a></li>
           </ul>
         </li>
-        <li><a href="#"><span class="glyphicon glyphicon-book" aria-hidden="true">&nbsp; </span>Cuentas</a></li>
+        <li><a href="../ventas/showCuentas.php"><span class="glyphicon glyphicon-book" aria-hidden="true">&nbsp; </span>Cuentas</a></li>
         <!--<li><a href="#"><span class="glyphicon glyphicon-log-out" aria-hidden="true">&nbsp; </span><b>Cerrar sesion<b/</a></li>-->
       </ul>
        <ul class="nav navbar-nav navbar-right">
@@ -157,7 +157,7 @@ echo '
       <td> '.$rows['descripcion'] .' </td>
       <td> '.$rows['marca'] .' </td>
       <td> '.$rows2['nombreProveedor'] .' </td>
-      <td> $ '.$rows['precio'] .'.00 </td>
+      <td> $ '.$rows['precio'] .'</td>
       <td align="center"><a href="editarProductos.php?idProducto='.$rows['idProducto'].'"><span class="glyphicon glyphicon-pencil"></span></a></td>
       <td align="center"><a href="../../../../controller/Productos/bajaProductos.php?idProducto='. $rows['idProducto'] .'"><span class="glyphicon glyphicon-trash"></span></a></td>
       </tr>

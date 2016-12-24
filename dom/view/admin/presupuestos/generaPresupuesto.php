@@ -42,6 +42,10 @@ form{
   #registrar{
     width: 100%;
   }
+#detalles{
+    width: 990px;
+    border-radius:5px;
+  }
   </style>
 </head>
 <body>
@@ -89,7 +93,7 @@ form{
              <li><a href="../clientes/showClientes.php">Clientes</a></li>
              <li><a href="../proveedores/showProveedores.php">Proveedores</a></li>
              <li><a href="../productos/showProductos.php">Productos</a></li>
-             <li><a href="showPresupuestos.php">Presupuesto</a></li>
+             <li><a href="showPresupuestos.php">Presupuestos</a></li>
              <li><a href="../ventas/showVentas.php">Ventas</a></li>
           </ul>
         </li>
@@ -99,18 +103,18 @@ form{
              <li><a href="../clientes/altaClientes.php">Cliente</a></li>
              <li><a href="../proveedores/altaProveedores.php">Proveedor</a></li>
              <li><a href="../productos/altaProductos.php">Producto</a></li>
+             <li><a href="generaPresupuesto.php">Presupuesto</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-file" aria-hidden="true">&nbsp; </span>Generar<span class="caret"></span></a>
           <ul class="dropdown-menu">
           <li><a href="generaPresupuesto.php">Abono</a></li>
-          <li><a href="generaPresupuesto.php">Presupuesto</a></li>
           <li><a href="showPresupuestos.php">Venta</a></li>
           <li><a href="#">Reporte de ventas</a></li>
           </ul>
         </li>
-        <li><a href="#"><span class="glyphicon glyphicon-book" aria-hidden="true">&nbsp; </span>Cuentas</a></li>
+        <li><a href="../ventas/showCuentas.php"><span class="glyphicon glyphicon-book" aria-hidden="true">&nbsp; </span>Cuentas</a></li>
         <!--<li><a href="#"><span class="glyphicon glyphicon-log-out" aria-hidden="true">&nbsp; </span><b>Cerrar sesion<b/</a></li>-->
       </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -132,7 +136,7 @@ form{
      <div class="form-group has-feedback">
   <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Descripción general</label>
    <div class=" col-xs-10 col-md-11">
-   <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+   <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
     <input class="form-control" type="text" id="nombre" placeholder="Nombre" name="descripcion" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+">
   </div> 
 </div>
@@ -142,8 +146,8 @@ form{
      <div class="form-group has-feedback">
   <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Detalles</label>
    <div class=" col-xs-10 col-md-11">
-   <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input class="form-control" type="text" id="nombre" placeholder="Nombre" name="detalles" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+">
+   <div class="input-group">
+    <textarea class="form-control" type="text" id="detalles" placeholder="Describa los detalles del presupuesto" name="detalles" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+"></textarea>
   </div> 
 </div>
 </div>
@@ -200,7 +204,6 @@ $('#frmRegistro').bootstrapValidator({
             validators: {
                 stringLength: { min: 1},
                  stringLength: { max: 200 },
-                notEmpty: { message:'Describa los detalles del presupuesto'}
             }
         },
         nombreCliente: { validators: { notEmpty: { message: 'Seleccione un cliente' } } },

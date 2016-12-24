@@ -98,18 +98,18 @@ $sql = mysql_query("SELECT * FROM presupuesto, clientes WHERE clientes.idCliente
              <li><a href="../clientes/altaClientes.php">Cliente</a></li>
              <li><a href="../proveedores/altaProveedores.php">Proveedor</a></li>
              <li><a href="../productos/altaProductos.php">Producto</a></li>
+             <li><a href="generaPresupuesto.php">Presupuesto</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-file" aria-hidden="true">&nbsp; </span>Generar<span class="caret"></span></a>
           <ul class="dropdown-menu">
           <li><a href="showPresupuestos.php">Abono</a></li>
-          <li><a href="generaPresupuesto.php">Presupuesto</a></li>
           <li><a href="showPresupuestos.php">Venta</a></li>
           <li><a href="#">Reporte de ventas</a></li>
           </ul>
         </li>
-        <li><a href="#"><span class="glyphicon glyphicon-book" aria-hidden="true">&nbsp; </span>Cuentas</a></li>
+        <li><a href="../ventas/showCuentas.php"><span class="glyphicon glyphicon-book" aria-hidden="true">&nbsp; </span>Cuentas</a></li>
         <!--<li><a href="#"><span class="glyphicon glyphicon-log-out" aria-hidden="true">&nbsp; </span><b>Cerrar sesion<b/</a></li>-->
       </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -151,13 +151,13 @@ $sql = mysql_query("SELECT * FROM presupuesto, clientes WHERE clientes.idCliente
     ?>
       <td ><a href="../../../../controller/Presupuestos/detallesPresupuesto.php?idPresupuesto=<?php echo $rows ['idPresupuesto']; ?>" data-toggle="tooltip" title="Some tooltip text!"><span class="glyphicon glyphicon-new-window"></span></a>&nbsp;&nbsp;&nbsp;<?php echo $rows ['descripcion']; ?></td>
       <td ><?php echo $rows ['nombreCliente']; ?></td>
-   <td align="right">$<?php echo $rows ['montoTotalMadera']; ?>.00&nbsp;&nbsp;
+   <td align="right">$<?php echo $rows ['montoTotalMadera']; ?>&nbsp;&nbsp;
    <a href="costoenMadera.php?idPresupuesto=<?php echo $rows ['idPresupuesto']; ?>">
    <span class="glyphicon glyphicon-new-window"></span></a></td>
-   <td align="right">$<?php echo $rows ['montoTotalProductos']; ?>.00&nbsp;&nbsp;
+   <td align="right">$<?php echo $rows ['montoTotalProductos']; ?>&nbsp;&nbsp;
    <a href="costoenProductos.php?idPresupuesto=<?php echo $rows ['idPresupuesto']; ?>">
    <span class="glyphicon glyphicon-new-window"></span></a></td>
-    <td align="right">$<?php echo $rows ['montoTotal']; ?>.00</td>   
+    <td align="right">$<?php echo $rows ['montoTotal']; ?></td>   
     <td></td>
     <td align="center"><a target="_bank" data-toggle="tooltip" title="Generar reporte" href="../reportes/reportePresupuesto1.php?idPresupuesto=<?php echo $rows['idPresupuesto']; ?>"><span class="glyphicon glyphicon-file"></span></a></td>
     <td align="center"><a href="../../../../controller/presupuestos/bajaPresupuesto.php?idPresupuesto=<?php echo $rows['idPresupuesto']; ?>"><span class="glyphicon glyphicon-trash"></span></a></td>

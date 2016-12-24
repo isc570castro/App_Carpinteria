@@ -76,7 +76,7 @@ $nombre=$_POST['nombre'];
              <li><a href="showClientes.php">Clientes</a></li>
              <li><a href="../proveedores/showProveedores.php">Proveedores</a></li>
              <li><a href="../productos/showProductos.php">Productos</a></li>
-             <li><a href="../presupuestos/showPresupuestos.php">Presupuesto</a></li>
+             <li><a href="../presupuestos/showPresupuestos.php">Presupuestos</a></li>
              <li><a href="../ventas/showVentas.php">Ventas</a></li>
           </ul>
         </li>
@@ -86,13 +86,13 @@ $nombre=$_POST['nombre'];
              <li><a href="altaClientes.php">Cliente</a></li>
              <li><a href="../proveedores/altaProveedores.php">Proveedor</a></li>
              <li><a href="../productos/altaProductos.php">Producto</a></li>
+             <li><a href="../presupuestos/generaPresupuesto.php">Presupuesto</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-file" aria-hidden="true">&nbsp; </span>Generar<span class="caret"></span></a>
           <ul class="dropdown-menu">
           <li><a href="buscarCliente.php">Abono</a></li>
-          <li><a href="../presupuestos/generaPresupuesto.php">Presupuesto</a></li>
           <li><a href="../presupuestos/showPresupuestos.php">Venta</a></li>
           <li><a href="#">Reporte de ventas</a></li>
           </ul>

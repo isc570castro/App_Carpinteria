@@ -109,7 +109,7 @@ $sql1 = mysql_query("SELECT * from abonos where folioVenta='$folioVenta';" , $li
           <li><a href="reporteVentas.php">Reporte de ventas</a></li>
           </ul>
         </li>
-        <li><a href="#"><span class="glyphicon glyphicon-book" aria-hidden="true">&nbsp; </span>Cuentas</a></li>
+         <li><a href="showCuentas.php"><span class="glyphicon glyphicon-book" aria-hidden="true">&nbsp; </span>Cuentas</a></li>
         <!--<li><a href="#"><span class="glyphicon glyphicon-log-out" aria-hidden="true">&nbsp; </span><b>Cerrar sesion<b/</a></li>-->
       </ul>
         <ul class="nav navbar-nav navbar-right">

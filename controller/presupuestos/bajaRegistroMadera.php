@@ -4,14 +4,29 @@
 	include "../../model/conexion.php";
 $objConex = new Conexion();
 $link=$objConex->conectarse();
-$sql = mysql_query("DELETE FROM materiaprima WHERE idPresupuesto='$idPresupuesto' and noRegistro='$noRegistro'", $link) or die(mysql_error());
-if (!$sql){
-	die("<p>Fallo la eliminación de datos".mysql_error()."</p>");
-	mysql_close($link);
-}else{
+$sqlmontoTotalRegistro = mysql_query("SELECT montoTotal FROM materiaprima WHERE idPresupuesto='$idPresupuesto' and noRegistro='$noRegistro'", $link) or die(mysql_error());
+$row=mysql_fetch_array($sqlmontoTotalRegistro);
+$montoTotalRegistro=$row['montoTotal'];
+
+$sqlmontoTotalPresupuesto = mysql_query("SELECT montoTotal, montoTotalMadera FROM presupuesto WHERE idPresupuesto='$idPresupuesto'", $link) or die(mysql_error());
+
+$row2=mysql_fetch_array($sqlmontoTotalPresupuesto);
+$montoTotalPresupuesto=$row2['montoTotal'];
+$totalPresupuestoDisminuido=$montoTotalPresupuesto-$montoTotalRegistro;
+	$sql = mysql_query("UPDATE presupuesto SET montoTotal='$totalPresupuestoDisminuido' WHERE idPresupuesto='$idPresupuesto'", $link) or die(mysql_error());
+	
+$montoTotalMadera=$row2['montoTotalMadera'];
+$totalPresupuestoMaderaDisminuido=$montoTotalMadera-$montoTotalRegistro;
+	$sql = mysql_query("UPDATE presupuesto SET montoTotalMadera='$totalPresupuestoMaderaDisminuido' WHERE idPresupuesto='$idPresupuesto'", $link) or die(mysql_error());   
+	   
+	$sql2 = mysql_query("DELETE FROM materiaprima WHERE idPresupuesto='$idPresupuesto' and noRegistro='$noRegistro'", $link) or die(mysql_error());
+
 	echo 	"<script type='text/javascript'>
-			window.location='../../dom/view/admin/Presupuestos/costoenMadera.php?idPresupuesto=$idPresupuesto';
+			alert('Datos eliminados correctamente');
 			</script>";
-    mysql_close($link);
-}
+	echo 	"<script type='text/javascript'>
+			window.location='../../dom/view/admin/presupuestos/costoenMadera.php?idPresupuesto=$idPresupuesto';
+			</script>";
+
+ mysql_close($link);
 ?>

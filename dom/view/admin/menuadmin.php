@@ -103,7 +103,7 @@ header ('Location:../../../index.html');
       <div class="col m12">
               <H3>Menú de control</H3>
               <div class="row">
-                <div class="col m3">
+                <div class="col m3 s12">
                   <a href="clientes/showClientes.php">
                 <div class="card-panel  orange accent-1 z-depth-2 center">
                   <i class="material-icons center" style="font-size: 100px; color: black;">people</i>
@@ -111,7 +111,7 @@ header ('Location:../../../index.html');
                 </div>
                 </a>
             </div>
-             <div class="col m3">
+             <div class="col m3 s12">
                 <a href="presupuestos/showPresupuestos.php">
                 <div class="card-panel orange accent-1 z-depth-2 center">
                   <i class="material-icons center" style="font-size: 100px; color: black;">description</i>
@@ -119,7 +119,7 @@ header ('Location:../../../index.html');
                 </div>
                 </a>
             </div>
-             <div class="col m3">
+             <div class="col m3 s12">
                 <a href="ventas/showVentas.php">
                 <div class="card-panel orange accent-1 z-depth-2 center">
                   <i class="material-icons center" style="font-size: 100px; color: black;">shopping_cart</i>
@@ -127,7 +127,7 @@ header ('Location:../../../index.html');
                 </div>
                 </a>
             </div>
-                <div class="col m3">
+                <div class="col m3 s12">
                 <a href="cuentas/Cuentas.php">
                 <div class="card-panel orange accent-1 z-depth-2 center">
                   <i class="material-icons center" style="font-size: 100px; color: black;">perm_contact_calendar</i>
@@ -135,7 +135,7 @@ header ('Location:../../../index.html');
                 </div>
                 </a>
             </div>
-            <div class="col m3">
+            <div class="col m3 s12">
                 <a href="productos/showProductos.php">
                 <div class="card-panel orange accent-1 z-depth-2 center">
                   <i class="material-icons center" style="font-size: 100px; color: black;">invert_colors</i>
@@ -143,7 +143,7 @@ header ('Location:../../../index.html');
                 </div>
                 </a>
             </div>
-                <div class="col m3">
+                <div class="col m3 s12">
                   <a href="proveedores/showProveedores.php">
                 <div class="card-panel  orange accent-1 z-depth-2 center">
                   <i class="material-icons center" style="font-size: 100px; color: black;">perm_identity</i>
@@ -152,7 +152,7 @@ header ('Location:../../../index.html');
                 </a>
             </div>
            
-            <div class="col m3">
+            <div class="col m3 s12">
                 <a href="../galerias/subirFoto.php">
                 <div class="card-panel orange accent-1 z-depth-2 center">
                   <i class="material-icons center" style="font-size: 100px; color: black;">perm_media</i>
@@ -160,19 +160,19 @@ header ('Location:../../../index.html');
                 </div>
                 </a>
             </div>
-            <div class="col m3">
-                <a href="../../../inicio.php">
-                <div class="card-panel orange accent-1 z-depth-2 center">
-                  <i class="material-icons center" style="font-size: 100px; color: black;">web</i>
-                   <h5 class="black-text" >Página</h5>
-                </div>
-                </a>
-            </div>
-             <div class="col m3">
+             <div class="col m3 s12">
                 <a href="servicios/showServicios.php">
                 <div class="card-panel orange accent-1 z-depth-2 center">
                   <i class="material-icons center" style="font-size: 100px; color: black;">message</i>
                    <h5 class="black-text" >Mensajes</h5>
+                </div>
+                </a>
+            </div>
+             <div class="col m3 s12">
+                <a href="../../../inicio.php">
+                <div class="card-panel orange accent-1 z-depth-2 center">
+                  <i class="material-icons center" style="font-size: 100px; color: black;">web</i>
+                   <h5 class="black-text" >Página</h5>
                 </div>
                 </a>
             </div>
@@ -183,7 +183,7 @@ header ('Location:../../../index.html');
 </div>
 <div class="card-panel white z-depth-3" id="menuadmin">
     <center>
-    <a href="../../../controller/sesiones/logout.php"><button type="button" id="btnlogin" class="btn btn-primary btn-lg"> Logout &nbsp;<span class="glyphicon glyphicon-log-out" aria-hidden="true"> </span></button></a>
+    <a href="../../../controller/sesiones/logout.php"><button style="color:black; text-align: center;" type="button" id="btnlogin" class="btn btn-primary btn-lg"> <label style="color:white; text-align:center;">Logout</label> &nbsp;<span class="glyphicon glyphicon-log-out" aria-hidden="true"> </span></button></a>
     </center>
 </div>
 <script src="../../src/bootstrap/js/jquery-1.10.2.js"></script>

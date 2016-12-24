@@ -79,13 +79,13 @@ header ('Location:../../../../index.html');
              <li><a href="altaClientes.php">Cliente</a></li>
              <li><a href="../proveedores/altaProveedores.php">Proveedor</a></li>
              <li><a href="../productos/altaProductos.php">Producto</a></li>
+             <li><a href="../presupuestos/generaPresupuesto.php">Presupuestos</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-file" aria-hidden="true">&nbsp; </span>Generar<span class="caret"></span></a>
           <ul class="dropdown-menu">
           <li><a href="altaClientes.php">Abono</a></li>
-          <li><a href="../presupuestos/generaPresupuesto.php">Presupuesto</a></li>
           <li><a href="../presupuestos/showPresupuestos.php">Venta</a></li>
           <li><a href="#">Reporte de ventas</a></li>
           </ul>
@@ -177,6 +177,14 @@ $('#frmRegistro').bootstrapValidator({
                 stringLength: { min: 1},
                  stringLength: { max: 45 },
                 notEmpty: { message:'El campo nombre es obligatorio'}
+            }
+        },
+         telefono: {
+            validators: {
+                phone: {
+                    country: 'MX',
+                    message: 'Numero no Valido'
+                }
             }
         },
     }

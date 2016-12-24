@@ -118,7 +118,7 @@ $row = mysql_fetch_array($sqlSumaPresios);
              <li><a href="../clientes/showClientes.php">Clientes</a></li>
              <li><a href="../proveedores/showProveedores.php">Proveedores</a></li>
              <li><a href="../productos/showProductos.php">Productos</a></li>
-             <li><a href="showPresupuestos.php">Presupuesto</a></li>
+             <li><a href="showPresupuestos.php">Presupuestos</a></li>
              <li><a href="../ventas/showVentas.php">Ventas</a></li>
           </ul>
         </li>
@@ -128,18 +128,18 @@ $row = mysql_fetch_array($sqlSumaPresios);
              <li><a href="../clientes/altaClientes.php">Cliente</a></li>
              <li><a href="../proveedores/altaProveedores.php">Proveedor</a></li>
              <li><a href="../productos/altaProductos.php">Producto</a></li>
+             <li><a href="generaPresupuesto.php">Presupuesto</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-file" aria-hidden="true">&nbsp; </span>Generar<span class="caret"></span></a>
           <ul class="dropdown-menu">
           <li><a href="costoenMadera.php">Abono</a></li>
-          <li><a href="generaPresupuesto.php">Presupuesto</a></li>
           <li><a href="showPresupuestos.php">Ventas</a></li>
           <li><a href="#">Reporte de ventas</a></li>
           </ul>
         </li>
-        <li><a href="#"><span class="glyphicon glyphicon-book" aria-hidden="true">&nbsp; </span>Cuentas</a></li>
+        <li><a href="../ventas/showCuentas.php"><span class="glyphicon glyphicon-book" aria-hidden="true">&nbsp; </span>Cuentas</a></li>
         <!--<li><a href="#"><span class="glyphicon glyphicon-log-out" aria-hidden="true">&nbsp; </span><b>Cerrar sesion<b/</a></li>-->
       </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -157,41 +157,39 @@ $row = mysql_fetch_array($sqlSumaPresios);
    <div class="form-group row">
   <label for="example-search-input" class="col-xs-1 col-form-label">Descripción</label>
    <div class="col-md-11">
-    <input class="form-control" type="text" id="nombrePresupuesto" name="descripcionRegistro" placeholder="Descripcion general del registro" required="required" autofocus>
+    <input class="form-control" type="text" id="nombrePresupuesto" name="descripcionRegistro" placeholder="Descripcion general del registro" autofocus>
   </div>
   </div>
   <div class="row" id="row">
-    <div class="col-md-1 col-md-offset-1"><input class="form-control" type="number"  onblur="calcularPies();" id="cantidad" placeholder="Cant." name="cantidad" required="required"></div>
-     <div class="col-md-2"><input class="form-control" type="number"  onblur="calcularPies();" id="grueso" placeholder="Grueso" name="grueso" required="required" ></div>
+   <div class="checkbox col-md-1">
+    <label>
+      <input type="checkbox" name="triplay" id="triplay" class="triplay" onclick="verificaCheck();"> Triplay
+    </label>
+  </div>
+    <div class="col-md-2"><input class="form-control" type="number"  onblur="calcularPies();" id="cantidad" placeholder="Cantidad" name="cantidad" required="required"></div>
+     <div class="col-md-2"><input class="form-control" type="text"  onblur="calcularPies();" id="grueso" placeholder="Grueso" name="grueso" required="required" ></div>
        <div class="col-md-2">
-     <select class="form-control" id="medidaLargo"  onblur="calcularPies();" required="required">
-      <option value="pies" selected="selected">Pies</option>
-      <option value="largo" >Pulgadas</option>
-   </select> 
-   </div>
-      <div class="col-md-2"><input class="form-control" type="number" onBlur="calcularPies();" placeholder="Ancho" id="ancho" name="ancho" required="required" ></div>
+        <input class="form-control" type="text" onblur="calcularPies();" placeholder="Ancho" id="ancho" name="ancho" required="required" ></div>
         <div class="col-md-2">
-     <select class="form-control" id="medidaLargo"  onblur="calcularPies();" required="required">
-      <option value="pies" selected="selected">Pies</option>
-      <option value="largo" >Pulgadas</option>
-   </select> 
-   </div>
-    <div class="col-md-2"><input class="form-control" type="number" onBlur="calcularPies();" id="largo" placeholder="Largo" name="largo" required="required" ></div>    
+          <input class="form-control" type="text" onblur="calcularPies();" id="largo" placeholder="Largo" name="largo" required="required" >
+      </div>
+       <div class="col-md-1"><label for="example-search-input" class="presio" data-toggle="tooltip" title="Cantidad total de pies">C.T.P.</label></div>
+    <div class="col-md-2"><input class=" form-control" type="text"  onfocus="calcularPies();" name="cantPies" id="cantpies" placeholder="Total de pies"></div>  
   </div> 
   <div class="row" id="row">
-  <div class="col-md-1"><label for="example-search-input" class="presio" data-toggle="tooltip" title="Cantidad total de pies">C.T.P.</label></div>
-    <div class="col-md-2"><input class=" form-control" type="text"  onfocus="calcularPies();" name="cantPies" id="cantpies" placeholder="Total de pies"></div>
    <div class="col-md-1"><label for="example-search-input" class="presio" data-toggle="tooltip" title="Costo de un pie">C.P.$</label></div>
     <div class="col-md-2"><input class=" form-control" type="text"  name="costoPie" id="costoPie"  onblur="presioUnitario1();" placeholder="0.00" required="required" ></div>
    <div class="col-md-1"><label for="example-search-input" class="presio" data-toggle="tooltip" title="Presio unitario" >P.U.$</label></div>
     <div class="col-md-2"><input class=" form-control" type="text"  name="presioUnitario" id="presioUnitario" placeholder="0.00" required="required" readonly=""></div>
    <div class="col-md-1"><label for="example-search-input" class="presio" data-toggle="tooltip" title="Monto Total">M.T.$ </label><br></div>
    <div class="col-md-2"><input class=" form-control" type="text"  id="montoTotal" name="montoTotal" placeholder="0.00" readonly=""></div>
-   <div class="col-md-2"></div>
+   <div class="col-md-1"><label for="example-search-input" class="presio" data-toggle="tooltip" title="Total de presupuesto" >T.P.</label></div>
+   <div class="col-md-2">
+     <div class="input-group"> <span data-toggle="tooltip" title="Costo total de presupuesto" class="input-group-addon"><i class="glyphicon glyphicon-usd" ></i></span><input class="form-control" type="text" id="precio" placeholder="0.00" name="totalProyecto" readondly onKeyPress="return solonumeros(event)" value="<?php if ($row['SUM(montoTotal)']>0) { echo $row['SUM(montoTotal)'];} ?>"></div>
+   </div>
    </div>
   <div class="row" id="row"> 
-   
-  <div class="col-md-2 col-md-offset-1"><div class="input-group"> <span data-toggle="tooltip" title="Costo total de presupuesto" class="input-group-addon"><i class="glyphicon glyphicon-usd" ></i></span><input class="form-control" type="text" id="precio" placeholder="0.00" name="totalProyecto" readondly onKeyPress="return solonumeros(event)" value="<?php if ($row['SUM(montoTotal)']>0) { echo $row['SUM(montoTotal)'];} ?>"></div>
+  <div class="col-md-2 col-md-offset-1">
     
   </div> 
     <div class="col-md-2 col-md-offset-5"><input type="submit" class="btn btn-primary" id="botones" value="Registrar"></div>
@@ -200,7 +198,7 @@ $row = mysql_fetch_array($sqlSumaPresios);
   <table class="table">
   <thead>
     <tr class="success">
-      <td align="center"><b>Descripcion</b></td> 
+      <td align="left"><b>Descripcion</b></td> 
       <td align="center"><b>Cantidad</b></td>
       <td align="center"><b>Grueso</b></td>
       <td align="center"><b>Ancho</b></td>
@@ -217,7 +215,7 @@ $row = mysql_fetch_array($sqlSumaPresios);
     <?php
     while ($rows = mysql_fetch_array($sql)){
      ?>
-      <td align="center"><?php echo $rows ['descripcion']; ?></td>
+      <td align="left"><?php echo $rows ['descripcion']; ?></td>
       <td align="center"><?php echo $rows ['cantidad']; ?></td>
       <td align="center"><?php echo $rows ['grueso']; ?></td>
       <td align="center"><?php echo $rows ['ancho']; ?></td>
@@ -259,7 +257,16 @@ $row = mysql_fetch_array($sqlSumaPresios);
 <script src="../../../src/bootstrap/js/bootstrap.min.js"></script>
 <script src="../../../src/bootstrap/js/sb-admin.js"></script>
   <script type="text/javascript">
-    function calcularPies(){
+  function verificaCheck(){ 
+   if($('input[name=triplay]').is(':checked')){
+      document.getElementById("grueso").readOnly = true;
+   }
+    else{
+      document.getElementById("grueso").readOnly = false;
+    }
+  }
+  function calcularPies(){  
+    var cantpies;
       var cantidad1 = $("#cantidad").val();
 
       cantidad = parseInt(cantidad1);
@@ -281,8 +288,13 @@ $row = mysql_fetch_array($sqlSumaPresios);
       if (isNaN(largo)){
         largo=0;
       }
-      var cantpies2 = ((cantidad * grueso * ancho * largo) / 12);
-      $("#cantpies").val(cantpies2);
+     if($('input[name=triplay]').is(':checked')){
+       cantpies = ((cantidad * ancho * largo) / 12);
+      $("#cantpies").val(cantpies);
+    }else{
+      cantpies = ((cantidad * grueso * ancho * largo) / 12);
+      $("#cantpies").val(cantpies);
+    }
     }
     function presioUnitario1(){
       var cantidad = $("#cantidad").val();
