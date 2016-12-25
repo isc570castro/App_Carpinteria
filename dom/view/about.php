@@ -14,10 +14,9 @@
   <link href="./src/bootstrap/css/sb-admin.css" rel="stylesheet">
 	<style>
 	.fondo{
-		width: 80%;
+		width: 100%;
   		background: white;
   		border: 1px solid #c4c4c4;
-  		padding-left: -20px;
       height: auto;
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   }
@@ -34,15 +33,18 @@
   p.texto{
   	font-size: 15px;
   }
-
+  img{
+    width: 100%;
+  }
 	</style>
 </head>
 <body>
 <center>
 <div class=row>
-<div class="col-xs-12 col-md-12">
+<div class="col-xs-12  col-md-12">
 <div class="superior">
 <img class="logo" src="../imagenes/LOGO2.PNG">
+</div>
 </div>
 </div>
 </div>
