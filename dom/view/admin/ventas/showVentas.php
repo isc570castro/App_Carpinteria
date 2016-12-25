@@ -153,7 +153,7 @@ echo '
       
       <td align="center"><a href="../../../../controller/ventas/bajaVenta.php?folio='. $rows['folioVenta'] .'" data-toggle="tooltip" title="Ver detalles"><span class="glyphicon glyphicon-eye-open"></span></a></td>
         <td align="center"><a href="../../../../controller/ventas/bajaVenta.php?folio='. $rows['folioVenta'] .'" data-toggle="tooltip" title="Agregar imagen"><span class="glyphicon glyphicon-picture"></span></a></td>
-      <td align="center"><a href="../../../../controller/ventas/bajaVenta.php?folio='. $rows['folioVenta'] .'" data-toggle="tooltip" title="Eliminar venta"><span class="glyphicon glyphicon-trash"></span></a></td>
+      <td align="center"><a href="../../../../controller/ventas/bajaVenta.php?folio='. $rows['folioVenta'] .'" data-toggle="tooltip" title="Eliminar venta" onclick="return eliminaVenta();"><span class="glyphicon glyphicon-trash"></span></a></td>
       </tr>
      ';
 }
@@ -164,6 +164,7 @@ echo '
 </div>
 </div>
 </body>
+ <script src="../../../js/eliminar.js"></script>
 <script src="../../../src/bootstrap/js/jquery-1.10.2.js"></script>
 <script src="../../../src/bootstrap/js/bootstrap.min.js"></script>
 <script src="../../../src/bootstrap/js/plugins/metisMenu/jquery.metisMenu.js"></script>

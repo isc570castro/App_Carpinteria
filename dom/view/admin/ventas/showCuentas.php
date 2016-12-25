@@ -165,6 +165,7 @@ $sql = mysql_query("SELECT ventacredito.folioVenta, clientes.nombreCliente, vent
 </div>
 </div>
 </body>
+ <script src="../../../js/eliminar.js"></script>
 <script src="../../../src/bootstrap/js/jquery-1.10.2.js"></script>
 <script src="../../../src/bootstrap/js/bootstrap.min.js"></script>
 <script src="../../../src/bootstrap/js/plugins/metisMenu/jquery.metisMenu.js"></script>

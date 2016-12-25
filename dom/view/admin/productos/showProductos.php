@@ -159,7 +159,7 @@ echo '
       <td> '.$rows2['nombreProveedor'] .' </td>
       <td> $ '.$rows['precio'] .'</td>
       <td align="center"><a href="editarProductos.php?idProducto='.$rows['idProducto'].'"><span class="glyphicon glyphicon-pencil"></span></a></td>
-      <td align="center"><a href="../../../../controller/Productos/bajaProductos.php?idProducto='. $rows['idProducto'] .'"><span class="glyphicon glyphicon-trash"></span></a></td>
+      <td align="center"><a href="../../../../controller/Productos/bajaProductos.php?idProducto='. $rows['idProducto'] .'"  onclick="return eliminaProducto();"><span class="glyphicon glyphicon-trash"></span></a></td>
       </tr>
      ';
 }
@@ -174,6 +174,7 @@ echo '
 </body>
 <script src="../../../src/bootstrap/js/jquery-1.10.2.js"></script>
 <script src="../../../src/bootstrap/js/bootstrap.min.js"></script>
+ <script src="../../../js/eliminar.js"></script>
 <script src="../../../src/bootstrap/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 <script src="../../../src/bootstrap/js/sb-admin.js"></script>
 </html> 

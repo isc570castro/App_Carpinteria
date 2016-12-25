@@ -5,7 +5,10 @@ $objConex = new Conexion();
 $link=$objConex->conectarse();
 $sql = mysql_query("DELETE FROM clientes WHERE idCliente='$idCliente'", $link) or die(mysql_error());
 if (!$sql){
-	die("<p>Fallo la eliminación de datos".mysql_error()."</p>");
+	die("<script type='text/javascript'>
+			alert('No se pudieron eliminar los datos debido a que hay registros ligados con el cliente');
+			window.location='../../dom/view/admin/Clientes/showClientes.php'
+			</script>");
 	mysql_close($link);
 }else{
 	echo 	"<script type='text/javascript'>

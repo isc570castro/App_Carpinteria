@@ -162,13 +162,11 @@ $rows = mysql_fetch_array($sql);
 </form>
 </div>
 </div>
-<script src="../../../src/bootstrap/js/bootstrap.min.js"></script>
-<script src="../../../src/bootstrap/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 <script src="../../../src/bootstrap/js/sb-admin.js"></script>
 <script src="../../../src/bootstrap/js/jquery.min.js"></script> 
 <script src="../../../src/bootstrap/js/bootstrapvalidator.min.js"></script> 
 <script src="../../../src/bootstrap/js/bootstrap.min.js"></script>
-<script src="../../../src/bootstrap/js/sb-admin.js"></script>
+ <script src="../../../js/eliminar.js"></script>
 <script>
   $(document).ready(function () {
 $('#frmRegistro').bootstrapValidator({

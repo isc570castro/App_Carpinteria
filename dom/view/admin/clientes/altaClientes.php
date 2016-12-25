@@ -79,7 +79,7 @@ header ('Location:../../../../index.html');
              <li><a href="altaClientes.php">Cliente</a></li>
              <li><a href="../proveedores/altaProveedores.php">Proveedor</a></li>
              <li><a href="../productos/altaProductos.php">Producto</a></li>
-             <li><a href="../presupuestos/generaPresupuesto.php">Presupuestos</a></li>
+             <li><a href="../presupuestos/generaPresupuesto.php">Presupuesto</a></li>
           </ul>
         </li>
         <li class="dropdown">

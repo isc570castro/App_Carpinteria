@@ -156,7 +156,7 @@ echo '
       <td> '.$Telefono=$rows['telefono'] .' </td>
       <td> '.$Correo=$rows['correo'] .' </td>
        <td align="center"><a href="editarCliente.php?idCliente='. $rows['idCliente'] .'"><span class="glyphicon glyphicon-pencil"></span></a></td>
-      <td align="center"><a href="../../../../controller/Clientes/bajaClientes.php?idCliente='. $rows['idCliente'] .'"><span class="glyphicon glyphicon-trash"></span></a></td>
+      <td align="center"><a href="../../../../controller/Clientes/bajaClientes.php?idCliente='. $rows['idCliente'] .'" onclick="return eliminaCliente();"><span class="glyphicon glyphicon-trash"></span></a></td>
       </tr>
       </tr>
      ';
@@ -174,4 +174,5 @@ echo '
 <script src="../../../src/bootstrap/js/bootstrap.min.js"></script>
 <script src="../../../src/bootstrap/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 <script src="../../../src/bootstrap/js/sb-admin.js"></script>
+ <script src="../../../js/eliminar.js"></script>
 </html> 

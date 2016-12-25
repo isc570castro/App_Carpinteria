@@ -5,7 +5,10 @@ $objConex = new Conexion();
 $link=$objConex->conectarse();
 $sql = mysql_query("DELETE FROM productos WHERE idProducto='$idProducto'", $link) or die(mysql_error());
 if (!$sql){
-	die("<p>Fallo la eliminación de datos".mysql_error()."</p>");
+	die("<script type='text/javascript'>
+			alert('No se pudieron eliminar los datos debido a que hay registros ligados con el producto');
+			window.location='../../dom/view/admin/Productos/showProductos.php'
+			</script>");
 	mysql_close($link);
 }else{
 	echo 	"<script type='text/javascript'>

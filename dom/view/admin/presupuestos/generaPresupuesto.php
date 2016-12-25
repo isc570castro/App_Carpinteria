@@ -43,7 +43,7 @@ form{
     width: 100%;
   }
 #detalles{
-    width: 990px;
+    width: 890px;
     border-radius:5px;
   }
   </style>

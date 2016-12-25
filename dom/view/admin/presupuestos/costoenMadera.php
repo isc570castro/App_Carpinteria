@@ -215,7 +215,6 @@ $row = mysql_fetch_array($sqlSumaPresios);
             <?php
             while ($rows = mysql_fetch_array($sql)){
              ?>
-             <td align="left"><?php echo $rows ['descripcion']; ?></td>
              <td align="center"><?php echo $rows ['cantidad']; ?></td>
              <td align="center"><?php echo $rows ['grueso']; ?></td>
              <td align="center"><?php echo $rows ['ancho']; ?></td>
