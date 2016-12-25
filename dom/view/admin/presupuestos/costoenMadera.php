@@ -198,7 +198,6 @@ $row = mysql_fetch_array($sqlSumaPresios);
   <table class="table">
     <thead>
       <tr class="success">
-        <td align="left"><b>Descripcion</b></td> 
         <td align="center"><b>Cantidad</b></td>
         <td align="center"><b>Grueso</b></td>
         <td align="center"><b>Ancho</b></td>
