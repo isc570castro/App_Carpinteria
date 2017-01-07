@@ -178,14 +178,14 @@ $row = mysql_fetch_array($sqlSumaPresios);
         </div>  
         <label for="example-search-input" class="col-xs-1 col-form-label">M.T $</label>
         <div class="col-md-2">
-          <input class="form-control" type="text" id="montoTotal" placeholder="0.00" name="montoTotal">
+          <input class="form-control" type="text" id="montoTotal" placeholder="0.00" name="montoTotal" required>
         </div> 
       </div>
       <div class="row">
         <div class="col-md-2 col-md-offset-1"><div class="input-group"> <span data-toggle="tooltip" title="Costo total de presupuesto" class="input-group-addon"><i class="glyphicon glyphicon-usd" ></i></span><input class="form-control" type="text" id="precio" placeholder="0.00" name="totalenMaterial" readondly onKeyPress="return solonumeros(event)" value="<?php if ($row['SUM(montoTotal)']>0) { echo $row['SUM(montoTotal)'];} ?>"></div>
       </div> 
       <div class="col-md-2 col-md-offset-5"><button type="submit" class="btn btn-primary" id="registrar"> Registrar </button></div>
-      <div class="col-md-2"><a href="showPresupuestos.php"><button type="button" class="btn btn-primary" id="registrar"> Terminar </button></a></div>
+      <div class="col-md-2"><a href="detallesPresupuesto.php?idPresupuesto=<?php echo $idPresupuesto?>"><button type="button" class="btn btn-primary" id="registrar"> Terminar </button></a></div>
     </div>
     <br>
     <div class="row">

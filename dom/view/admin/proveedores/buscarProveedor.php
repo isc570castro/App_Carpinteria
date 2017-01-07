@@ -81,7 +81,7 @@ $nombre=$_POST['nombre'];
              <li><a href="../clientes/showClientes.php">Clientes</a></li>
              <li><a href="showProveedores.php">Proveedores</a></li>
              <li><a href="../productos/showProductos.php">Productos</a></li>
-             <li><a href="../presupuestos/showPresupuestos.php">Presupuesto</a></li>
+             <li><a href="../presupuestos/showPresupuestos.php">Presupuestos</a></li>
              <li><a href="../ventas/showVentas.php">Ventas</a></li>
           </ul>
         </li>

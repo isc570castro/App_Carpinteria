@@ -4,6 +4,7 @@
 	include "../../model/conexion.php";
 $objConex = new Conexion();
 $link=$objConex->conectarse();
+/*
 $sqlmontoTotalRegistro = mysql_query("SELECT montoTotal FROM materiaprima WHERE idPresupuesto='$idPresupuesto' and noRegistro='$noRegistro'", $link) or die(mysql_error());
 $row=mysql_fetch_array($sqlmontoTotalRegistro);
 $montoTotalRegistro=$row['montoTotal'];
@@ -18,7 +19,15 @@ $totalPresupuestoDisminuido=$montoTotalPresupuesto-$montoTotalRegistro;
 $montoTotalMadera=$row2['montoTotalMadera'];
 $totalPresupuestoMaderaDisminuido=$montoTotalMadera-$montoTotalRegistro;
 	$sql = mysql_query("UPDATE presupuesto SET montoTotalMadera='$totalPresupuestoMaderaDisminuido' WHERE idPresupuesto='$idPresupuesto'", $link) or die(mysql_error());   
-	   
+	*/   
+$sqltotalPies = mysql_query("SELECT totalPies FROM presupuesto WHERE idPresupuesto='$idPresupuesto'", $link) or die(mysql_error());
+$row=mysql_fetch_array($sqltotalPies);
+$totalPies=$row['totalPies'];
+$sqlcantPies = mysql_query("SELECT cantPies FROM materiaprima WHERE idPresupuesto='$idPresupuesto' and noRegistro='$noRegistro'", $link) or die(mysql_error());
+$row2=mysql_fetch_array($sqlcantPies);
+$cantPies=$row2['cantPies'];
+$totalPies2=$totalPies-$cantPies;
+	$sql3 = mysql_query("UPDATE presupuesto SET totalPies='$totalPies2' WHERE idPresupuesto='$idPresupuesto'", $link) or die(mysql_error());  
 	$sql2 = mysql_query("DELETE FROM materiaprima WHERE idPresupuesto='$idPresupuesto' and noRegistro='$noRegistro'", $link) or die(mysql_error());
 
 	echo 	"<script type='text/javascript'>

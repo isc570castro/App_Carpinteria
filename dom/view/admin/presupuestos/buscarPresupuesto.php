@@ -150,7 +150,7 @@ $sql = mysql_query("SELECT * FROM presupuesto, clientes WHERE clientes.idCliente
     <?php
     while ($rows = mysql_fetch_array($sql)){
     ?>
-      <td ><a href="../../../../controller/Presupuestos/detallesPresupuesto.php?idPresupuesto=<?php echo $rows ['idPresupuesto']; ?>" data-toggle="tooltip" title="Some tooltip text!"><span class="glyphicon glyphicon-new-window"></span></a>&nbsp;&nbsp;&nbsp;<?php echo $rows ['descripcion']; ?></td>
+      <td ><a href="detallesPresupuesto.php?idPresupuesto=<?php echo $rows ['idPresupuesto']; ?>" data-toggle="tooltip" title="Some tooltip text!"><span class="glyphicon glyphicon-new-window"></span></a>&nbsp;&nbsp;&nbsp;<?php echo $rows ['descripcion']; ?></td>
       <td ><?php echo $rows ['nombreCliente']; ?></td>
    <td align="right">$<?php echo $rows ['montoTotalMadera']; ?>.00&nbsp;&nbsp;
    <a href="costoenMadera.php?idPresupuesto=<?php echo $rows ['idPresupuesto']; ?>">

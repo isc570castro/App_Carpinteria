@@ -38,7 +38,8 @@ $sql = mysql_query("SELECT * FROM presupuesto, clientes WHERE clientes.idCliente
       height: auto;
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     }
-    #buscar{
+    #search{
+
 
     }
   </style>
@@ -120,63 +121,61 @@ $sql = mysql_query("SELECT * FROM presupuesto, clientes WHERE clientes.idCliente
 </nav>
 </div>
 </nav>
+
 <div class="row">
- <div class="col-md-10 col-md-offset-1" id="fondo">
-  <div class="col-md-6"><br><h2>Sección de Presupuestos</h2>
-  </div>
-  <div class="col-md-6">
-    <div class="col-md-5"></div>
-    <div class="col-md-7">
-     <br>
-     <form class="navbar-form navbar-left" role="search" id="buscar" method="POST" action="buscarPresupuesto.php">
-       <div class="form-group" id="buscar">
-        <input type="text" class="form-control" placeholder="Buscar por descripcion" name="nombre"> 
-      </div>
-      <button type="submit" class="btn btn-default" aria-label="Left Align">
-        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-      </button>
+ <div class="col-md-8 col-md-offset-2" id="fondo">    
+ <form method="POST" action="buscarPresupuesto.php">
+   <div class="row">
+  <div class="col-md-5 col-md-offset-1"><br><h2>Sección de Presupuestos</h2></div>
+
+  
+  <div class="col-md-5 ">
+  
+    <div class="input-group">
+      <input type="text" class="form-control" name="nombre" placeholder="Buscar por descripción">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+      </span>
     </form>
-  </div>
-</div>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->   
+     
 <div class="row">
-  <div class="col-md-12 col-md-offset-0">
+  <div class="col-md-10 col-md-offset-1">
     <table class="table">
       <thead>
         <tr class="success" >
-          <td width=28%><b>Descripción del presupuesto</b></td> <td width=15%><b>Cliente</b></td><td align="right"><b>Costo en madera</b></td><td align="right"><b>Costo en productos</b></td><td align="right" width=14%><b>Monto total</b></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-          <tbody>
-            <tr>
-              <?php
-              while ($rows = mysql_fetch_array($sql)){
-                ?>
-                <td ><a href="../../../../controller/Presupuestos/detallesPresupuesto.php?idPresupuesto=<?php echo $rows ['idPresupuesto']; ?>" data-toggle="tooltip" title="Some tooltip text!"><span class="glyphicon glyphicon-new-window"></span></a>&nbsp;&nbsp;&nbsp;<?php echo $rows ['descripcion']; ?></td>
-                <td ><?php echo $rows ['nombreCliente']; ?></td>
-                <td align="right">$<?php echo $rows ['montoTotalMadera']; ?>&nbsp;&nbsp;
-                 <a href="costoenMadera.php?idPresupuesto=<?php echo $rows ['idPresupuesto']; ?>">
-                   <span class="glyphicon glyphicon-new-window"></span></a></td>
-                   <td align="right">$<?php echo $rows ['montoTotalProductos']; ?>&nbsp;&nbsp;
-                     <a href="costoenProductos.php?idPresupuesto=<?php echo $rows ['idPresupuesto']; ?>">
-                       <span class="glyphicon glyphicon-new-window"></span></a></td>
-                       <td align="right">$<?php echo $rows ['montoTotal']; ?></td>   
-                       <td></td>
-                       <td align="center"><a target="_bank" data-toggle="tooltip" title="Generar reporte" href="../reportes/reportePresupuesto1.php?idPresupuesto=<?php echo $rows['idPresupuesto']; ?>"><span class="glyphicon glyphicon-file"></span></a></td>
-                       <td align="center"><a href="../../../../controller/presupuestos/bajaPresupuesto.php?idPresupuesto=<?php echo $rows['idPresupuesto']; ?>" onclick="return eliminaPresupuesto();"><span class="glyphicon glyphicon-trash"></span></a></td>
-                       <td align="right">
-                        <a href="../ventas/generarVenta.php?idPresupuesto=<?php echo $rows ['idPresupuesto']; ?>" data-toggle="tooltip" title="Generar venta">
-                         <span class="glyphicon glyphicon-shopping-cart"></span></a></td>
-                       </tr>     
-                       <?php 
-                     } 
-                     ?>
-                     <tbody>
-                     </table>
-                   </div>
-                 </div>
-               </div>
-             </body>
-             <script src="../../../src/bootstrap/js/jquery-1.10.2.js"></script>
-             <script src="../../../js/eliminar.js"></script>
-             <script src="../../../src/bootstrap/js/bootstrap.min.js"></script>
-             <script src="../../../src/bootstrap/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-             <script src="../../../src/bootstrap/js/sb-admin.js"></script>
-             </html> 
+          <td width=45%><b>Descripción del presupuesto</b></td> <td width=30%><b>Cliente</b></td><td align="center" colspan="3"><b>Acciones</b></td>
+        </tr>
+        <tbody>
+          <tr>
+            <?php
+            while ($rows = mysql_fetch_array($sql)){
+              ?>
+              <td>&nbsp;&nbsp;&nbsp;<?php echo $rows ['descripcion']; ?></td>
+              <td ><?php echo $rows ['nombreCliente']; ?></td>                   
+
+              <td align="right">
+                <a href="detallesPresupuesto.php?idPresupuesto=<?php echo $rows ['idPresupuesto']; ?>" data-toggle="tooltip" title="Detalles de presupuesto"><span class="glyphicon glyphicon-new-window"></span></a>
+              </td>
+              <td align="right">
+                <a href="../ventas/generarVenta.php?idPresupuesto=<?php echo $rows ['idPresupuesto']; ?>" data-toggle="tooltip" title="Generar venta">
+                 <span class="glyphicon glyphicon-shopping-cart"></span></a>
+               </td>
+               <td align="right"><a href="../../../../controller/presupuestos/bajaPresupuesto.php?idPresupuesto=<?php echo $rows['idPresupuesto']; ?>" onclick="return eliminaPresupuesto();"><span class="glyphicon glyphicon-trash"></span></a>
+               </td>
+             </tr>     
+             <?php 
+           } 
+           ?>
+           <tbody>
+           </table>
+         </div>
+       </div>
+   </body>
+   <script src="../../../src/bootstrap/js/jquery-1.10.2.js"></script>
+   <script src="../../../js/eliminar.js"></script>
+   <script src="../../../src/bootstrap/js/bootstrap.min.js"></script>
+   <script src="../../../src/bootstrap/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+   <script src="../../../src/bootstrap/js/sb-admin.js"></script>
+   </html> 

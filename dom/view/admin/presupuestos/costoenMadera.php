@@ -8,9 +8,9 @@ $idPresupuesto=$_REQUEST['idPresupuesto'];
 include "../../../../model/conexion.php";
 $objConex = new Conexion();
 $link=$objConex->conectarse();
-$sql = mysql_query("SELECT * FROM materiaPrima where idPresupuesto='$idPresupuesto';" , $link) or die(mysql_error());
-$sqlSumaPresios= mysql_query("select SUM(montoTotal) from materiaPrima where idPresupuesto='$idPresupuesto';", $link) or die(mysql_error());
-$row = mysql_fetch_array($sqlSumaPresios);
+$sql = mysql_query("SELECT * FROM materiaPrima where idPresupuesto='$idPresupuesto' and tipoMadera='pino';" , $link) or die(mysql_error());
+/*$sqlSumaPresios= mysql_query("select SUM(montoTotal) from materiaPrima where idPresupuesto='$idPresupuesto';", $link) or die(mysql_error());
+$row = mysql_fetch_array($sqlSumaPresios);*/
 ?>
 <!DOCTYPE html>
 <html>
@@ -71,6 +71,15 @@ $row = mysql_fetch_array($sqlSumaPresios);
       background: -ms-linear-gradient(#444, #111);
       background: linear-gradient(#444, #111);  
     }
+      form{
+    background-color: white;
+    width: 90%;
+    border: 1px solid #c4c4c4;
+    padding-right: 20px;
+    padding-left: 5%;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  }
   </style>
 </head>
 <body>
@@ -136,7 +145,7 @@ $row = mysql_fetch_array($sqlSumaPresios);
         <ul class="dropdown-menu">
           <li><a href="costoenMadera.php">Abono</a></li>
           <li><a href="showPresupuestos.php">Ventas</a></li>
-          <li><a href="#">Reporte de ventas</a></li>
+          <li><a target="_bank" href="../reportes/reportemadera.php?idPresupuesto=<?php echo $idPresupuesto;?>&tipoMadera=PINO">Reporte</a></li>
         </ul>
       </li>
       <li><a href="../ventas/showCuentas.php"><span class="glyphicon glyphicon-book" aria-hidden="true">&nbsp; </span>Cuentas</a></li>
@@ -152,7 +161,7 @@ $row = mysql_fetch_array($sqlSumaPresios);
 </nav>
 <div class="col-md-11 col-md-offset-1">
   <form class="registro" action="../../../../controller/Presupuestos/registraMadera.php?idPresupuesto=<?php echo $idPresupuesto;?>" method="POST" enctype="multipart/form-data" name="frmaltaPresupuesto">
-    <h1>Presupuesto de madera empleada</h1>
+    <h1>Cálculo de pies de Pino</h1>
     <legend></legend>
    <!-- <div class="form-group row">
       <label for="example-search-input" class="col-xs-1 col-form-label">Descripción</label>
@@ -174,9 +183,9 @@ $row = mysql_fetch_array($sqlSumaPresios);
         <input class="form-control" type="text" onblur="calcularPies();" id="largo" placeholder="Largo" name="largo" required="required" >
       </div>
       <div class="col-md-1"><label for="example-search-input" class="presio" data-toggle="tooltip" title="Cantidad total de pies">C.T.P.</label></div>
-      <div class="col-md-2"><input class=" form-control" type="text"  onfocus="calcularPies();" name="cantPies" id="cantpies" placeholder="Total de pies" readonly=""></div>  
+      <div class="col-md-2"><input class=" form-control" type="text"  onfocus="calcularPies();" name="cantPies" id="cantpies" placeholder="Total de pies" readonly="" required=""></div>  
     </div> 
-    <div class="row" id="row">
+    <!--<div class="row" id="row">
      <div class="col-md-1"><label for="example-search-input" class="presio" data-toggle="tooltip" title="Costo de un pie">C.P.$</label></div>
      <div class="col-md-2"><input class=" form-control" type="text"  name="costoPie" id="costoPie"  onblur="presioUnitario1();" placeholder="0.00" required="required" ></div>
      <div class="col-md-1"><label for="example-search-input" class="presio" data-toggle="tooltip" title="Presio unitario" >P.U.$</label></div>
@@ -185,15 +194,15 @@ $row = mysql_fetch_array($sqlSumaPresios);
      <div class="col-md-2"><input class=" form-control" type="text"  id="montoTotal" name="montoTotal" placeholder="0.00" readonly=""></div>
      <div class="col-md-1"><label for="example-search-input" class="presio" data-toggle="tooltip" title="Total de presupuesto">T.P.</label></div>
      <div class="col-md-2">
-       <div class="input-group"> <span data-toggle="tooltip" title="Costo total de presupuesto" class="input-group-addon"><i class="glyphicon glyphicon-usd" ></i></span><input class="form-control" readonly type="text" id="precio" placeholder="0.00" name="totalProyecto" readondly onKeyPress="return solonumeros(event)" value="<?php if ($row['SUM(montoTotal)']>0) { echo $row['SUM(montoTotal)'];} ?>"></div>
+       <div class="input-group"> <span data-toggle="tooltip" title="Costo total de presupuesto" class="input-group-addon"><i class="glyphicon glyphicon-usd" ></i></span><input class="form-control" readonly type="text" id="precio" placeholder="0.00" name="totalProyecto" readondly onKeyPress="return solonumeros(event)" value="<?php #if ($row['SUM(montoTotal)']>0) { echo $row['SUM(montoTotal)'];} ?>"></div>
      </div>
-   </div>
+   </div>-->
    <div class="row" id="row"> 
     <div class="col-md-2 col-md-offset-1">
 
     </div> 
     <div class="col-md-2 col-md-offset-5"><input type="submit" class="btn btn-primary" id="botones" value="Registrar"></div>
-    <div class="col-md-2"><a href="showPresupuestos.php" ><input type="button" class="btn btn-primary" id="botones" value="Terminar"></a></div>
+    <div class="col-md-2"><a href="detallesPresupuesto.php?idPresupuesto=<?php echo $idPresupuesto;?>" ><input type="button" class="btn btn-primary" id="botones" value="Terminar"></a></div>
   </div>
   <table class="table">
     <thead>
@@ -202,10 +211,10 @@ $row = mysql_fetch_array($sqlSumaPresios);
         <td align="center"><b>Grueso</b></td>
         <td align="center"><b>Ancho</b></td>
         <td align="center"><b>Largo</b></td>
-        <td align="center"><b>Pies</b></td>
-        <td align="center"><b>Presio Pie</b></td>
+        <td align="center"><b>Cant. Pies</b></td>
+        <!--<td align="center"><b>Presio Pie</b></td>
         <td align="center"><b>Presio Unitario</b></td>
-        <td align="center"><b>Monto Total</b></td>
+        <td align="center"><b>Monto Total</b></td>-->
         <td></td>
       </thead>
       <tbody>
@@ -218,10 +227,10 @@ $row = mysql_fetch_array($sqlSumaPresios);
              <td align="center"><?php echo $rows ['grueso']; ?></td>
              <td align="center"><?php echo $rows ['ancho']; ?></td>
              <td align="center"><?php echo $rows ['largo']; ?></td>
-             <td align="center"><?php echo $rows ['total']; ?></td>
-             <td align="center">$<?php echo $rows ['presioPie']; ?></td>
-             <td align="center">$<?php echo $rows ['presioUnitario']; ?></td>
-             <td align="center">$<?php echo $rows ['montoTotal']; ?></td>
+             <td align="center"><?php echo $rows ['cantPies']; ?></td>
+             <!--<td align="center">$<?php #echo $rows ['presioPie']; ?></td>
+             <td align="center">$<?php#echo $rows ['presioUnitario']; ?></td>
+             <td align="center">$<?php #echo $rows ['montoTotal']; ?></td>-->
              <td align="center"><a href="../../../../controller/presupuestos/bajaRegistroMadera.php?noRegistro=<?php echo $rows ['noRegistro'];?>&idPresupuesto=<?php echo $idPresupuesto; ?>"><span class="glyphicon glyphicon-trash"></span></a></td>
            </tr>
            <?php  
@@ -286,10 +295,10 @@ $row = mysql_fetch_array($sqlSumaPresios);
      $("#cantpies").val(cantpies);
    }else{
     cantpies = ((cantidad * grueso * ancho * largo) / 12);
-    $("#cantpies").val(cantpies);
+    $("#cantpies").val((cantpies).toFixed(2));
   }
 }
-function presioUnitario1(){
+/*function presioUnitario1(){
   var cantidad = $("#cantidad").val();
   if (isNaN(cantidad)){
     cantidad=0;
@@ -308,6 +317,7 @@ function presioUnitario1(){
   $("#costoPie").val(costoPie+".00");
   $("#presioUnitario").val(presioUnitario+".00");
   $("#montoTotal").val(montoTotal+".00");
-}
+
+}*/
 </script>
 </html> 
