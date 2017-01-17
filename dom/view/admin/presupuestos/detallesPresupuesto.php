@@ -276,6 +276,87 @@
  </div>
  </div>
  <div class="form-group row">
+  <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Triplay de 1/2' :</label>
+  <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Total de pies:</label>
+  <div class=" col-xs-10 col-md-2">
+   <div class="input-group"> 
+    <input class="form-control" type="text" id="totalPiesBanak" value="<?php echo $rows2['totalPiesBanak']?>" placeholder="0" name="totalPiesBanak">
+  </div> 
+</div>
+<label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Costo de 1 pie</label>
+<div class=" col-xs-10 col-md-2">
+ <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+  <input class="form-control" onblur="calcularTotalBanak();" type="text" id="precioPieBanak" value="<?php echo $rows2['precioPieBanak']?>" placeholder="0.00" name="precioPieBanak">
+</div> 
+</div>
+<label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Total</label>
+<div class=" col-xs-10 col-md-2">
+ <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+  <input class="form-control" type="text" id="precioBanak" value="<?php echo $rows2['montoTotalBanak']?>" readonly placeholder="0.00" name="precioBanak">
+</div> 
+</div>
+<div class=" col-xs-10 col-md-1">
+ <div class="input-group"> 
+   <a href="costoenMaderaBanak.php?idPresupuesto=<?php echo $idPresupuesto; ?>">
+     <span class="glyphicon glyphicon-new-window"></span></a>
+   </div> 
+ </div>
+ </div>
+ <div class="form-group row">
+  <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Triplay de 5/8' :</label>
+  <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Total de pies:</label>
+  <div class=" col-xs-10 col-md-2">
+   <div class="input-group"> 
+    <input class="form-control" type="text" id="totalPiesBanak" value="<?php echo $rows2['totalPiesBanak']?>" placeholder="0" name="totalPiesBanak">
+  </div> 
+</div>
+<label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Costo de 1 pie</label>
+<div class=" col-xs-10 col-md-2">
+ <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+  <input class="form-control" onblur="calcularTotalBanak();" type="text" id="precioPieBanak" value="<?php echo $rows2['precioPieBanak']?>" placeholder="0.00" name="precioPieBanak">
+</div> 
+</div>
+<label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Total</label>
+<div class=" col-xs-10 col-md-2">
+ <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+  <input class="form-control" type="text" id="precioBanak" value="<?php echo $rows2['montoTotalBanak']?>" readonly placeholder="0.00" name="precioBanak">
+</div> 
+</div>
+<div class=" col-xs-10 col-md-1">
+ <div class="input-group"> 
+   <a href="costoenMaderaBanak.php?idPresupuesto=<?php echo $idPresupuesto; ?>">
+     <span class="glyphicon glyphicon-new-window"></span></a>
+   </div> 
+ </div>
+ </div>
+ <div class="form-group row">
+  <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Triplay de 3/4' :</label>
+  <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Total de pies:</label>
+  <div class=" col-xs-10 col-md-2">
+   <div class="input-group"> 
+    <input class="form-control" type="text" id="totalPiesBanak" value="<?php echo $rows2['totalPiesBanak']?>" placeholder="0" name="totalPiesBanak">
+  </div> 
+</div>
+<label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Costo de 1 pie</label>
+<div class=" col-xs-10 col-md-2">
+ <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+  <input class="form-control" onblur="calcularTotalBanak();" type="text" id="precioPieBanak" value="<?php echo $rows2['precioPieBanak']?>" placeholder="0.00" name="precioPieBanak">
+</div> 
+</div>
+<label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Total</label>
+<div class=" col-xs-10 col-md-2">
+ <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+  <input class="form-control" type="text" id="precioBanak" value="<?php echo $rows2['montoTotalBanak']?>" readonly placeholder="0.00" name="precioBanak">
+</div> 
+</div>
+<div class=" col-xs-10 col-md-1">
+ <div class="input-group"> 
+   <a href="costoenMaderaBanak.php?idPresupuesto=<?php echo $idPresupuesto; ?>">
+     <span class="glyphicon glyphicon-new-window"></span></a>
+   </div> 
+ </div>
+ </div>
+ <div class="form-group row">
   <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label col-md-offset-8">Total de madera:</label>
   <div class=" col-xs-10 col-md-2">
    <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
