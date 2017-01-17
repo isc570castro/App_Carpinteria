@@ -56,7 +56,7 @@
         width: 100%;
       }
       #detalles{
-        width: 850px;
+        width: 900px;
         border-radius:5px;
       }
       #guardar{
