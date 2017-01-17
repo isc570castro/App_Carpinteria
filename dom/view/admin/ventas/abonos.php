@@ -24,7 +24,15 @@ $sql1 = mysql_query("SELECT * from abonos where folioVenta='$folioVenta';" , $li
     <link href="../../../src/bootstrap/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="../../../bootstrap/css/sb-admin.css" rel="stylesheet">
   <style type="text/css">
-
+ form{
+    background-color: white;
+    width: 90%;
+    border: 1px solid #c4c4c4;
+    padding-right: 20px;
+    padding-left: 5%;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  }
   h2{
     margin-top: -2px;
   }

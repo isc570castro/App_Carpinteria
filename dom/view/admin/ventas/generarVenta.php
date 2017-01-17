@@ -27,7 +27,15 @@ $folio=$rows2['max(FolioVenta)']+1;
   <link href="../../../src/bootstrap/font-awesome/css/font-awesome.css" rel="stylesheet">
   <link href="../../../bootstrap/css/sb-admin.css" rel="stylesheet">
   <style type="text/css">
-
+    form{
+    background-color: white;
+    width: 90%;
+    border: 1px solid #c4c4c4;
+    padding-right: 20px;
+    padding-left: 5%;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  }
     h2{
       margin-top: -2px;
     }
@@ -44,7 +52,16 @@ $folio=$rows2['max(FolioVenta)']+1;
     #folio{
       text-align: center;
     }
-    
+     #cantidad{
+      text-align: center;
+    }
+    #imagen{
+      margin-left: 48%;
+    }
+    #descripcion{
+      font-size: 17px;
+      margin-left: -22px;
+    }
   </style>
 </head>
 <body>
@@ -124,46 +141,43 @@ $folio=$rows2['max(FolioVenta)']+1;
 </nav>
 </div>
 </nav>
-<br>
 <div class="row">
  <div class="col-md-6 col-md-offset-3 col-xs-11 col-xs-offset-1">
-  <form class="registro"  action="../../../../controller/ventas/altaVenta.php?idPresupuesto=<?php echo $idPresupuesto; ?>" method="POST" enctype="multipart/form-data" name="frmaltaProductos" id="frmRegistro">
-    <h1>Generar venta</h1>
+  <form class="registro"  action="../../../../controller/ventas/altaVenta.php?idPresupuesto=<?php echo $idPresupuesto; ?>" method="POST" enctype="multipart/form-data" name="frmaltaProductos" id="frmRegistro"> 
+        <h1>Generar venta <span id="imagen"><i class="glyphicon glyphicon-shopping-cart"></i></span>
+        </h1> 
     <legend></legend>
     <legend><font size="5"> Datos de venta: </font></legend>
-    <div class="form-group row">
-      <label for="example-search-input" class="col-xs-2 col-md-2 col-md-offset-5">Folio:</label>
-      <div class="form-group has-feedback">
-       <div class=" col-xs-10 col-md-5">
-         <div class="input-group"> 
-           <b>
-            <input class="form-control" type="text" value="<?php echo $folio;?>" id="folio" placeholder="0" name="folio" readonly>
-          </div> 
-        </b>
-      </div>
-    </div>
-  </div>
-  <div class="form-group row">
+     <div class="form-group row">
+  <div class="form-group has-feedback">
     <label for="example-search-input" class="col-xs-2 col-md-2 col-md-offset-5">Fecha:</label>
-    <div class="form-group has-feedback">
      <div class=" col-xs-10 col-md-4">
        <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-         <input type="date" id="txtfecha" name="fecha" class="form-control" value="<?php echo date("Y-n-j"); ?>" required/>
+         <input type="date" id="txtfecha" name="fecha" class="form-control" value="<?php echo date("Y-n-j");?>" required/>
        </div> 
      </div>
    </div>
  </div>
- <div class="form-group row">
-  <div class="form-group has-feedback">
-   <div class=" col-xs-10 col-md-5 col-md-offset-7">
-     <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
-      <input class="form-control" type="text" value="<?php echo $rows['montoTotal'];?>" id="precio" placeholder="0.00" name="montoTotal" onKeyPress="return solonumeros(event)">
-    </div> 
+        <div class="form-group row">
+ <label for="example-search-input" class="col-xs-2 col-md-4 col-form-label">Descripción de venta:</label>
+ <div class=" col-xs-10 col-md-8">
+  <div class="input-group"> 
+    <p id="descripcion"><?php echo $rows['descripcion']; ?></p>
+  </div> 
+</div>
+</div>
+    <div class="form-group row">
+      <label for="example-search-input" class="col-xs-2 col-md-3">Folio de venta:</label>
+      <div class="form-group has-feedback">
+       <div class=" col-xs-10 col-md-5">
+         <div class="input-group"> 
+         <p id="descripcion" name="folio"><?php echo $folio;?></p>
+          </div> 
+      </div>
+    </div>
   </div>
-</div>
-</div>
-<div class="form-group row">
- <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Cliente</label>
+    <div class="form-group row">
+ <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Cliente:</label>
  <div class=" col-xs-10 col-md-10">
   <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
     <select class="form-control" id="idCliente" name="idCliente">        
@@ -176,14 +190,45 @@ $folio=$rows2['max(FolioVenta)']+1;
   </div> 
 </div>
 </div>
+    
+ <div class="form-group row">
+  <div class="form-group has-feedback">
+  <label for="example-search-input" class="col-xs-2 col-md-2 col-md-offset-5">Precio:</label>
+   <div class=" col-xs-10 col-md-5">
+     <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+      <input class="form-control" type="text" value="<?php echo $rows['montoTotal'];?>" id="precio" placeholder="0.00" name="precio" onKeyPress="return solonumeros(event)">
+    </div> 
+  </div>
+</div>
+</div>
+<div class="form-group row">
+  <div class="form-group has-feedback">
+  <label for="example-search-input" class="col-xs-2 col-md-2 col-md-offset-5">Cantidad:</label>
+   <div class=" col-xs-10 col-md-5">
+         <div class="input-group"> 
+          <input class="form-control" type="text" value="1" name="cantidad" autofocus id="cantidad"onblur="calcularMontoTotal();">
+          </div> 
+      </div>
+</div>
+</div>
+<div class="form-group row">
+  <div class="form-group has-feedback">
+  <label for="example-search-input" class="col-xs-2 col-md-2 col-md-offset-5">Monto Total:</label>
+   <div class=" col-xs-10 col-md-5">
+     <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+      <input class="form-control" type="text" value="<?php echo $rows['montoTotal'];?>" id="montoTotal" placeholder="0.00" name="montoTotal" onKeyPress="return solonumeros(event)">
+    </div> 
+  </div>
+</div>
+</div>
 <div class="row">
-
   <div class="col-md-5 col-md-offset-7 col-xs-3"><button type="submit" class="btn btn-primary" id="registrar"> Registrar </button></div>
 </div>
 <br>
 </form>
 </div>
 </div>
+<br>
 <script src="../../../src/bootstrap/js/bootstrap.min.js"></script>
 <script src="../../../src/bootstrap/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 <script src="../../../src/bootstrap/js/sb-admin.js"></script>
@@ -260,6 +305,18 @@ $folio=$rows2['max(FolioVenta)']+1;
     return false;
     alert('Solo números');
   }
+}
+function calcularMontoTotal(){
+  var precio  = $("#precio").val();
+  if (isNaN(precio)){
+    precio=0;
+  }
+  var cantidad=$("#cantidad").val();
+  if (isNaN(cantidad)){
+    cantidad=0;
+  }
+  var montoTotal=precio*cantidad;
+   $("#montoTotal").val((montoTotal).toFixed(2));
 }
 </script>
 </html>

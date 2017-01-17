@@ -1,5 +1,4 @@
 <?php
-	$folio=$_POST['folio'];
  	$idPresupuesto=$_REQUEST['idPresupuesto'];
 	$montoTotal=$_POST['montoTotal'];
 	$fecha=$_POST['fecha'];
@@ -7,6 +6,9 @@
 	include "../../model/conexion.php";
 $objConex = new Conexion();
 $link=$objConex->conectarse();
+$sqlmaxFolio= mysql_query("select max(FolioVenta) from ventaCredito", $link) or die(mysql_error());
+$row= mysql_fetch_array($sqlmaxFolio);
+$folio=$row['max(FolioVenta)']+1;
 $sql = mysql_query("INSERT INTO ventacredito
 		VALUES ('$folio','$fecha','$idPresupuesto','$montoTotal','$idCliente','Pendiente','$montoTotal')", $link) or die(mysql_error());
 if (!$sql){

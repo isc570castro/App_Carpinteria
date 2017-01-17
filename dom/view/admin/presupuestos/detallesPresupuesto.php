@@ -8,7 +8,7 @@
   include "../../../../model/conexion.php";
   $objConex = new Conexion();
   $link=$objConex->conectarse();
-  $sql = mysql_query("SELECT nombreCliente FROM clientes" , $link) or die(mysql_error());
+  $sql = mysql_query("SELECT * FROM clientes" , $link) or die(mysql_error());
   $sql2 = mysql_query("SELECT * FROM presupuesto, clientes WHERE idPresupuesto='$idPresupuesto' and presupuesto.idCliente=clientes.idCliente" , $link) or die(mysql_error()); 
   $rows2=mysql_fetch_array($sql2);          
   ?>
@@ -61,6 +61,9 @@
       }
       #guardar{
         margin-top: 15px;
+      }
+      #terminar{
+        width: 80%;
       }
     </style>
   </head>
@@ -149,7 +152,7 @@
     <div class="col-md-11">
       <h1>Detalles de presupuesto</h1>
       </div>
-      <div class="col-md-1" id="guardar"><button type="submit" class="btn btn-primary" id="registrar"> <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> </button></div>
+     
       </div>
       <legend></legend>
       <legend><font size="5"> Datos generales</font></legend>
@@ -182,7 +185,7 @@
        <?php                   
        while ($rows = mysql_fetch_array($sql)){   
         ?>
-        <option value="<?php echo $rows['idCliente']; ?>"><?php echo $rows['nombreCliente']; ?></option>
+        <option value="<?php echo $rows['idCliente'];?>"><?php echo $rows['nombreCliente']; ?></option>
         <?php
       }
       ?>
@@ -303,10 +306,10 @@
 </div>
 </div>
 <div class="row">
-  <div class="col-md-9"></div>
-  
+  <div class="col-md-8"></div>
+  <div class="col-md-1"><button type="submit" class="btn btn-primary" id="registrar"> <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span> </button></div>
+  <div class="col-md-1"><a href="detallesPresupuesto2.php?idPresupuesto=<?php echo $idPresupuesto;?>"><button class="btn btn-primary" id="registrar"> <span class="glyphicon glyphicon-floppy-remove" aria-hidden="true"></span> </button></a></div>
   <div class="col-md-2"><a href="showPresupuestos.php"><input type="button" class="btn btn-primary" id="registrar" value="Terminar"></a></div>
-  
 </div>
 <br>
 </form>

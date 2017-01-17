@@ -131,7 +131,7 @@ header ('Location:../../../../index.html');
 include "../../../../model/conexion.php";
 $objConex = new Conexion();
 $link=$objConex->conectarse();
-$sql = mysql_query("SELECT ventacredito.estado, ventacredito.folioVenta, clientes.nombreCliente, presupuesto.descripcion, presupuesto.montoTotal, ventacredito.montoRestante,ventacredito.fechaVenta  FROM ventacredito, presupuesto, clientes WHERE ventacredito.idPresupuesto=presupuesto.idPresupuesto and ventacredito.idCliente=clientes.idCliente;" , $link) or die(mysql_error());
+$sql = mysql_query("SELECT ventacredito.estado, ventacredito.folioVenta, clientes.nombreCliente, presupuesto.descripcion, presupuesto.idPresupuesto, ventacredito.montoTotal, ventacredito.montoRestante,ventacredito.fechaVenta  FROM ventacredito, presupuesto, clientes WHERE ventacredito.idPresupuesto=presupuesto.idPresupuesto and ventacredito.idCliente=clientes.idCliente;" , $link) or die(mysql_error());
 echo ' 
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
@@ -151,7 +151,7 @@ echo '
       <td> $'.$rows['montoTotal'] .' </td>';
       echo'
       
-      <td align="center"><a href="../../../../controller/ventas/bajaVenta.php?folio='. $rows['folioVenta'] .'" data-toggle="tooltip" title="Ver detalles"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+      <td align="center"><a href="../presupuestos/detallesPresupuesto.php?idPresupuesto='. $rows['idPresupuesto'] .'" data-toggle="tooltip" title="Ver detalles"><span class="glyphicon glyphicon-eye-open"></span></a></td>
         <td align="center"><a href="../../../../controller/ventas/bajaVenta.php?folio='. $rows['folioVenta'] .'" data-toggle="tooltip" title="Agregar imagen"><span class="glyphicon glyphicon-picture"></span></a></td>
       <td align="center"><a href="../../../../controller/ventas/bajaVenta.php?folio='. $rows['folioVenta'] .'" data-toggle="tooltip" title="Eliminar venta" onclick="return eliminaVenta();"><span class="glyphicon glyphicon-trash"></span></a></td>
       </tr>
