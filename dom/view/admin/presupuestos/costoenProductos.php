@@ -31,6 +31,7 @@ $row = mysql_fetch_array($sqlSumaPresios);
   <link href="../../../src/bootstrap/font-awesome/css/font-awesome.css" rel="stylesheet">
   <link href="../../../bootstrap/css/sb-admin.css" rel="stylesheet">
   <style type="text/css">
+
     div.container-fluid{
       font-size: 15px;
     }
@@ -40,11 +41,15 @@ $row = mysql_fetch_array($sqlSumaPresios);
       padding-top: 15px;
     }
     form{
-      width: 90%;
-      padding-right: 20px;
-      padding-left: 20px;
-      height: auto;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    
+    background-color: white;
+    width: 90%;
+    border: 1px solid #c4c4c4;
+    padding-right: 20px;
+    padding-left: 5%;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  
     }
     #registrar{
       width: 100%;
@@ -52,6 +57,7 @@ $row = mysql_fetch_array($sqlSumaPresios);
     }
     #cantidad{
       width: 100%;
+      text-align: center;
 
     }
     .form-control{
@@ -168,23 +174,26 @@ $row = mysql_fetch_array($sqlSumaPresios);
             <?php } ?>
           </select>
         </div>
-        <label for="example-search-input" class="col-xs-1 col-form-label">Presio $</label>
+        <label for="example-search-input" class="col-xs-1 col-form-label">Precio</label>
         <div class="col-md-2">
-          <input class="form-control" type="text" id="precio" placeholder="0.00" name="precio">
+        <div class="input-group"> <span data-toggle="tooltip" title="Costo total de presupuesto" class="input-group-addon"><i class="glyphicon glyphicon-usd" ></i></span><input class="form-control" type="text" id="precio" placeholder="0.00" name="precio">
+          </div>
         </div>
-        <label for="example-search-input" class="col-xs-1 col-form-label">Cantidad</label>
-        <div class="col-md-1">
-          <input class="form-control" type="text" id="cantidad" placeholder="Cant." onBlur="calcularMT();" name="cantidad" required>
-        </div>  
-        <label for="example-search-input" class="col-xs-1 col-form-label">M.T $</label>
         <div class="col-md-2">
-          <input class="form-control" type="text" id="montoTotal" placeholder="0.00" name="montoTotal" required>
+          <input class="form-control" type="text" id="cantidad" placeholder="Cantidad" onBlur="calcularMT();" name="cantidad" required>
+        </div>  
+        <label for="example-search-input" class="col-xs-1 col-form-label" data-toggle="tooltip" title="Monto total">M.T.&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-hand-right" onclick="calcularMT();" style="cursor:pointer;" data-toggle="tooltip" title="Calcular el monto total"></span></label>
+        <div class="col-md-2">
+         <div class="input-group"> <span data-toggle="tooltip" title="Costo total de presupuesto" class="input-group-addon"><i class="glyphicon glyphicon-usd" ></i></span><input class="form-control" type="text" id="montoTotal" placeholder="0.00" name="montoTotal" required>
+          </div>
+          
         </div> 
       </div>
       <div class="row">
-        <div class="col-md-2 col-md-offset-1"><div class="input-group"> <span data-toggle="tooltip" title="Costo total de presupuesto" class="input-group-addon"><i class="glyphicon glyphicon-usd" ></i></span><input class="form-control" type="text" id="precio" placeholder="0.00" name="totalenMaterial" readondly onKeyPress="return solonumeros(event)" value="<?php if ($row['SUM(montoTotal)']>0) { echo $row['SUM(montoTotal)'];} ?>"></div>
-      </div> 
-      <div class="col-md-2 col-md-offset-5"><button type="submit" class="btn btn-primary" id="registrar"> Registrar </button></div>
+        <!--<div class="col-md-2 col-md-offset-1"><div class="input-group"> <span data-toggle="tooltip" title="Costo total de presupuesto" class="input-group-addon"><i class="glyphicon glyphicon-usd" ></i></span><input class="form-control" type="text" id="precio" placeholder="0.00" name="totalenMaterial" readondly onKeyPress="return solonumeros(event)" value="<?php #if ($row['SUM(montoTotal)']>0) { echo $row['SUM(montoTotal)'];} ?>"></div>
+      </div> -->
+       <div class="col-md-1 col-md-offset-9"><button type="submit" class="btn btn-primary" id="registrar"> 
+  <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> </button></div>
       <div class="col-md-2"><a href="detallesPresupuesto.php?idPresupuesto=<?php echo $idPresupuesto?>"><button type="button" class="btn btn-primary" id="registrar"> Terminar </button></a></div>
     </div>
     <br>
@@ -240,6 +249,7 @@ $("#productos").change(function funcVerificar()
     $.get("verificaPrecioProducto.php?idProducto="+idProducto,function(data){
     $('#precio').val(data);
     });
+    $('#cantidad').focus();
 });
 
 </script>

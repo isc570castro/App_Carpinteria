@@ -170,11 +170,6 @@ $row = mysql_fetch_array($sqlSumaPresios);*/
       </div>
     </div> -->
     <div class="row" id="row">
-     <div class="checkbox col-md-1">
-      <label>
-        <input type="checkbox" name="triplay" id="triplay" class="triplay" onclick="verificaCheck();"> Triplay
-      </label>
-    </div>
     <div class="col-md-2"><input class="form-control" type="number"  onblur="calcularPies();" id="cantidad" placeholder="Cantidad" name="cantidad" required="required" autofocus></div>
     <div class="col-md-2"><input class="form-control" type="text"  onblur="calcularPies();" id="grueso" placeholder="Grueso" name="grueso" required="required"></div>
     <div class="col-md-2">
@@ -182,7 +177,7 @@ $row = mysql_fetch_array($sqlSumaPresios);*/
       <div class="col-md-2">
         <input class="form-control" type="text" onblur="calcularPies();" id="largo" placeholder="Largo" name="largo" required="required" >
       </div>
-      <div class="col-md-1"><label for="example-search-input" class="presio" data-toggle="tooltip" title="Cantidad total de pies">C.T.P.</label></div>
+      <div class="col-md-2"><label for="example-search-input" class="presio" data-toggle="tooltip" title="Cantidad total de pies">C.T.P.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-hand-right" onclick="calcularPies();" style="cursor:pointer;"></span></label></div>
       <div class="col-md-2"><input class=" form-control" type="text"  onfocus="calcularPies();" name="cantPies" id="cantpies" placeholder="Total de pies" readonly="" required=""></div>  
     </div> 
     <!--<div class="row" id="row">
@@ -201,7 +196,8 @@ $row = mysql_fetch_array($sqlSumaPresios);*/
     <div class="col-md-2 col-md-offset-1">
 
     </div> 
-    <div class="col-md-2 col-md-offset-5"><input type="submit" class="btn btn-primary" id="botones" value="Registrar"></div>
+   <div class="col-md-1 col-md-offset-6"><button type="submit" class="btn btn-primary" id="registrar"> 
+  <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> </button></div>
     <div class="col-md-2"><a href="detallesPresupuesto.php?idPresupuesto=<?php echo $idPresupuesto;?>" ><input type="button" class="btn btn-primary" id="botones" value="Terminar"></a></div>
   </div>
   <table class="table">
