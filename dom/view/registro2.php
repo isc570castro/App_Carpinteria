@@ -1,6 +1,7 @@
 <?php
-$nombre=$_GET['nombre'];
+$usuario=$_GET['usuario'];
 $password=$_GET['password'];
+$password2=$_GET['password2'];
 ?>
 <!DOCTYPE>
 <html>
@@ -19,6 +20,15 @@ $password=$_GET['password'];
 		#registro{
 			width: 100%;
 		}
+    form{
+    background-color: white;
+    width: 90%;
+    border: 1px solid #c4c4c4;
+    padding-right: 20px;
+    padding-left: 5%;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  }
 	</style>
 </head>
 <body>
@@ -69,32 +79,32 @@ $password=$_GET['password'];
   <form class="frmRegistro" action="../../controller/sesiones/registraUsuario.php" method="POST" enctype="multipart/form-data" name="frmaltaClientes" id="frmRegistro">
   <h1>Registro de usuarios</h1>
   <legend></legend>
-      <div class="form-group row">
-     <div class="form-group has-feedback">
-  <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Nombre</label>
-   <div class=" col-xs-10 col-md-10">
-   <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input class="form-control" type="text" value="<?php echo $nombre;?>" id="nombre" placeholder="Introdusca su nombre" name="nombreUsuario" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+">
-  </div> 
-</div>
-</div>
-</div>
     <div class="form-group row">
      <div class="form-group has-feedback">
   <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Usuario</label>
    <div class=" col-xs-10 col-md-10">
    <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input class="form-control" type="text" id="usuario" placeholder="Introdusca un usuario" name="usuario" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+">
+    <input class="form-control" type="text" id="usuario" placeholder="Introdusca un usuario" name="usuario" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+" value="<?php echo $usuario?>">
   </div> 
 </div>
 </div>
 </div>
 <div class="form-group row">
 <div class="form-group has-feedback">
-  <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Contraseña</label>
+  <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Contraseña:</label>
  <div class=" col-xs-10 col-md-10">
-    <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-    <input class="form-control" type="password" id="correo" value="<?php echo $password;?>" placeholder="Introdusca una contraseña" name="password">
+    <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+    <input class="form-control" type="password" id="correo" placeholder="Introdusca una contraseña" name="password" value="<?php echo $password?>">
+  </div> 
+</div>
+</div>
+</div>
+<div class="form-group row">
+<div class="form-group has-feedback">
+  <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Confirmar contraseña:</label>
+ <div class=" col-xs-10 col-md-10">
+    <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+    <input class="form-control" type="password" id="correo" placeholder="Confirme la contraseña" name="password2" value="<?php echo $password?>">
   </div> 
 </div>
 </div>
@@ -150,6 +160,12 @@ $('#frmRegistro').bootstrapValidator({
          password: {
             validators: {
                 notEmpty: { message: 'La contrasea es obligatoria' },
+               // emailAddress: { message: 'E-mail no valido' }
+            }
+        },
+         password2: {
+            validators: {
+                notEmpty: { message: 'La validación de contraseña es obligatoria' },
                // emailAddress: { message: 'E-mail no valido' }
             }
         },

@@ -30,6 +30,10 @@ header ('Location:../../../../index.html');
     height: auto;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   }
+  p{
+      text-align: left;
+      padding-left: 110px;
+    }
   </style>
 </head>
 <body>
@@ -107,74 +111,58 @@ header ('Location:../../../../index.html');
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-</div>
-</nav>
- <div class="col-md-10 col-md-offset-1" id="fondo">
- <div class="row">
-  <div class="col-md-1"></div>
-  <div class="col-md-5"><br><h2>Sección de Productos</h2>
-  </div>
-  <div class="col-md-6">
-  <div class="col-md-4"></div>
-   <div class="col-md-8">
-   <br>
-      <form class="navbar-form navbar-left" role="search" id="buscar" action="buscarProducto.php" method="POST">
-     <div class="form-group">
-      <input type="text" class="form-control" placeholder="Buscar por nombre" name="nombre">
-     </div>
-     <button type="submit" class="btn btn-default" aria-label="Left Align">
-    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-      </button>
-    </form>
-    </div>
-  </div>
-  </div>
-<?php
-include "../../../../model/conexion.php";
-$objConex = new Conexion();
-$link=$objConex->conectarse();
-$sql = mysql_query("SELECT * FROM productos;" , $link) or die(mysql_error());
-$row=mysql_num_rows($sql);
 
-echo ' 
+  </div>
 <div class="row">
-  <div class="col-md-10 col-md-offset-1">
-  <table class="table">
-  <thead>
-    <tr class="success">
-      <th>Descripción</th>
-      <th>Marca</th>
-      <th>Proveedor</th> 
-      <th>Presio</th>  
-    </thead>';
-    while ($rows = mysql_fetch_array($sql)){
-      $idProveedor=$rows['idProveedor'];
-      $sql2 = mysql_query("SELECT nombreProveedor FROM proveedores WHERE idProveedor='$idProveedor';" , $link) or die(mysql_error());
-      $rows2=mysql_fetch_array($sql2);
-  echo '
-  <tbody>
-    <tr>
-      <td> '.$rows['descripcion'] .' </td>
-      <td> '.$rows['marca'] .' </td>
-      <td> '.$rows2['nombreProveedor'] .' </td>
-      <td> $ '.$rows['precio'] .'</td>
-      <td align="center"><a href="editarProductos.php?idProducto='.$rows['idProducto'].'"><span class="glyphicon glyphicon-pencil"></span></a></td>
-      <td align="center"><a href="../../../../controller/Productos/bajaProductos.php?idProducto='. $rows['idProducto'] .'"  onclick="return eliminaProducto();"><span class="glyphicon glyphicon-trash"></span></a></td>
-      </tr>
-     ';
-}
-echo '
-<tbody>
-</table>
+ <div class="col-md-10 col-md-offset-1" id="fondo">    
+ <form class="navbar-form navbar-left" role="search" id="buscar" action="buscarProducto.php" method="POST">
+   <div class="row">
+  <div class="col-md-5 col-md-offset-1"><br><h2>Sección de Productos</h2></div>
+  <div class="col-md-5 "> 
+    <div class="input-group">
+     <input style="width: 100%;" type="text" class="form-control" placeholder="Buscar por descripción del producto" type="text" name="busqueda" id="busqueda" value="" placeholder="" maxlength="30" autocomplete="off" onKeyUp="buscar();">
+      <span class="input-group-btn"></button>
+        <button class="btn btn-default" type="button" id="search" onclick="limpiarBuscador();">Todos los productos</button>
+      </span>
+    </form>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->  
 </div>
-</div>
-';
-?>
-</div>
+<div id="resultadoBusqueda"></div>
 </body>
-<script src="../../../src/bootstrap/js/jquery-1.10.2.js"></script>
+<script src="../../../src/bootstrap/js/jquery.min.js"></script> 
 <script src="../../../src/bootstrap/js/bootstrap.min.js"></script>
- <script src="../../../js/eliminar.js"></script>
-<script src="../../../src/bootstrap/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 <script src="../../../src/bootstrap/js/sb-admin.js"></script>
+<script src="../../../js/eliminar.js"></script>
+<script>
+  $(document).ready(function() {
+    var textoBusqueda = $("input#busqueda").val();
+    consultas();
+    if (textoBusqueda == "") {
+      $('#search').attr('disabled', true);
+    }else{
+      $('#search').attr('disabled', false);
+    }
+  });
+  function buscar() {
+    consultas();
+    var textoBusqueda = $("input#busqueda").val();
+    if (textoBusqueda == "") {
+      $('#search').attr('disabled', true);
+    }else{
+      $('#search').attr('disabled', false);
+    }
+  };
+  function limpiarBuscador() {
+     $("input#busqueda").val('');
+    $('#search').attr('disabled', true);
+    consultas();
+  }
+  function consultas(){
+     var textoBusqueda = $("input#busqueda").val();
+    $.post("buscarProducto.php", {valorBusqueda: textoBusqueda}, function(mensaje) {
+      $("#resultadoBusqueda").html(mensaje);
+    }); 
+  }
+</script>
 </html> 

@@ -1,5 +1,6 @@
 <?php
 	$descripcion=$_POST['descripcion'];
+	$tipo=$_POST['tipo'];
  	$precio=$_POST['precio'];
 	$marca=$_POST['marca'];
 	$nombreProveedor=$_POST['nombreProveedor'];
@@ -10,7 +11,7 @@ $sacaidProveedor=mysql_query("SELECT idProveedor FROM proveedores WHERE nombrePr
 $rows = mysql_fetch_array($sacaidProveedor); 
 $idProveedor=$rows['idProveedor']; 
 $sql = mysql_query("INSERT INTO Productos
-		VALUES (null,'$descripcion','$precio','$marca','$idProveedor')", $link) or die(mysql_error());
+		VALUES (null,'$descripcion','$precio','$marca','$idProveedor','$tipo')", $link);
 if (!$sql){
 	die("<p>Fallo la insersion a la base de datos: ".mysql_error()."</p>");
 	mysql_close($link);

@@ -75,13 +75,13 @@ $usuario = $_SESSION['login'];
         ';
       }else{
         echo'
-      <li><a data-toggle="modal" data-target="#exampleModal"><span class="glyphicon glyphicon-envelope" aria-hidden="true" >&nbsp;</span>Pedir servicio</a></li>
+      <li><a style="cursor:pointer;" data-toggle="modal" data-target="#exampleModal"><span class="glyphicon glyphicon-envelope" aria-hidden="true" >&nbsp;</span>Pedir servicio</a></li>
       ';
       }
       ?>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-       <a href="controller/sesiones/logout.php"<li><button type="button" id="btnlogin" class="btn btn-primary btn-lg"> Logout &nbsp;<span class="glyphicon glyphicon-log-out" aria-hidden="true"> </span></button></a> ';
+       <a href="controller/sesiones/logout.php"><button type="button" id="btnlogin" class="btn btn-primary btn-lg"> Logout &nbsp;<span class="glyphicon glyphicon-log-out" aria-hidden="true"> </span></button></a> ';
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -102,19 +102,19 @@ $usuario = $_SESSION['login'];
     <div class="item active">
      <img class="carrucel" src="dom/imagenes/img1.jpg" alt="..." data-src="holder.js/900x400/auto/#777:#7a7a7a/text:Second slide" width="600" height="200">
       <div class="carousel-caption">
-        ...
+      
       </div>
     </div>
     <div class="item">
       <img class="carrucel" src="dom/imagenes/img2.jpg" alt="..." data-src="holder.js/900x400/auto/#777:#7a7a7a/text:Second slide" width="600" height="200">
       <div class="carousel-caption">
-        ...
+       
       </div>
     </div>
     <div class="item">
       <img class="carrucel" src="dom/imagenes/img3.jpg" alt="..." data-src="holder.js/900x400/auto/#777:#7a7a7a/text:Second slide">
       <div class="carousel-caption">
-        ...
+       
       </div>
     </div>
   </div>

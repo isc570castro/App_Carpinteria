@@ -33,6 +33,10 @@ header ('Location:../../../../index.html');
     height: auto;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   }
+  p{
+      text-align: left;
+      padding-left: 110px;
+    }
   </style>
 </head>
 <body>
@@ -113,70 +117,54 @@ header ('Location:../../../../index.html');
 </div>
 </nav>
 <div class="row">
- <div class="col-md-10 col-md-offset-1" id="fondo">
-  <div class="col-md-1"></div>
-  <div class="col-md-5"><br><h2>Sección de Proveedores</h2>
-  </div>
-  <div class="col-md-6">
-  <div class="col-md-4"></div>
-   <div class="col-md-8">
-   <br>
-      <form class="navbar-form navbar-left" role="search" id="buscar" action="buscarProveedor.php" method="POST">
-     <div class="form-group">
-      <input type="text" class="form-control" placeholder="Buscar por nombre de producto" name="nombre">
-     </div>
-     <button type="submit" class="btn btn-default" aria-label="Left Align">
-    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-      </button>
+ <div class="col-md-10 col-md-offset-1" id="fondo">    
+ <form class="navbar-form navbar-left" role="search" id="buscar" action="buscarProveedor.php" method="POST">
+   <div class="row">
+  <div class="col-md-5 col-md-offset-1"><br><h2>Sección de proveedores</h2></div>
+  <div class="col-md-5 ">
+    <div class="input-group">
+     <input style="width: 100%;" type="text" class="form-control" placeholder="Buscar por nombre de proveedor" type="text" name="busqueda" id="busqueda" value="" placeholder="" maxlength="30" autocomplete="off" onKeyUp="buscar();">
+      <span c|click="limpiarBuscador();">Todos los proveedores</button>
+      </span>
     </form>
-  </div>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->  
 </div>
-
-<?php
-include "../../../../model/conexion.php";
-$objConex = new Conexion();
-$link=$objConex->conectarse();
-$sql = mysql_query("SELECT * FROM proveedores;" , $link) or die(mysql_error());
-$row=mysql_num_rows($sql);
-
-echo ' 
-<div class="row">
-  <div class="col-md-10 col-md-offset-1">
-  <table class="table">
-  <thead>
-    <tr class="success">
-      <th class="nombre">Nombre</th>
-      <th class="domicilio">Domicilio</th>
-      <th class="telefono">Telefono</th>
-      <th class="correo">Correo</th>
-      <th></th>
-      <th></th>
-    </thead>';
-    while ($rows = mysql_fetch_array($sql)){
-  echo '
-  <tbody>
-    <tr>
-      <td> '.$rows['nombreProveedor'] .' </td>
-      <td> '.$rows['domicilio'] .' </td>
-      <td> '.$rows['telefono'] .' </td>
-      <td> '.$rows['correo'] .' </td>
-      <td align="center"><a href="editarProveedor.php?idProveedor='. $rows['idProveedor'] .'"><span class="glyphicon glyphicon-pencil"></span></a></td>
-      <td align="center"><a href="../../../../controller/Proveedores/bajaProveedores.php?idProveedor='. $rows['idProveedor'] .'" onclick="return eliminaProveedor();"><span class="glyphicon glyphicon-trash"></span></a></td>
-      </tr>
-     ';
-}
-echo '
-<tbody>
-</table>
-</div>
-</div>
-';
-?>
-</div>
+<div id="resultadoBusqueda"></div>
 </body>
-<script src="../../../src/bootstrap/js/jquery-1.10.2.js"></script>
+<script src="../../../src/bootstrap/js/jquery.min.js"></script> 
 <script src="../../../src/bootstrap/js/bootstrap.min.js"></script>
-<script src="../../../src/bootstrap/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 <script src="../../../src/bootstrap/js/sb-admin.js"></script>
- <script src="../../../js/eliminar.js"></script>
+<script src="../../../js/eliminar.js"></script>
+ <script>
+  $(document).ready(function() {
+    var textoBusqueda = $("input#busqueda").val();
+    consultas();
+    if (textoBusqueda == "") {
+      $('#search').attr('disabled', true);
+    }else{
+      $('#search').attr('disabled', false);
+    }
+  });
+  function buscar() {
+    consultas();
+    var textoBusqueda = $("input#busqueda").val();
+    if (textoBusqueda == "") {
+      $('#search').attr('disabled', true);
+    }else{
+      $('#search').attr('disabled', false);
+    }
+  };
+  function limpiarBuscador() {
+     $("input#busqueda").val('');
+    $('#search').attr('disabled', true);
+    consultas();
+  }
+  function consultas(){
+     var textoBusqueda = $("input#busqueda").val();
+    $.post("buscarProveedor.php", {valorBusqueda: textoBusqueda}, function(mensaje) {
+      $("#resultadoBusqueda").html(mensaje);
+    }); 
+  }
+</script>
 </html> 

@@ -9,7 +9,7 @@
   a:hover{
     box-shadow:0 0 2px 1px rgba (0,140,186,0.5);
   }
-  
+
    h2.subtitulo1{
     margin: -28px 0px 0px;
       padding: 20px 65px;
@@ -23,10 +23,7 @@
   p.texto{
     font-size: 15px;
   }
-  img{
-    width: 80%;
-     border-radius: 4px;
-  }
+ 
 
   label.gsubtitulo{
     margin: -20px 0px 0px;

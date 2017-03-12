@@ -153,7 +153,7 @@ $folio=$rows2['max(FolioVenta)']+1;
     <label for="example-search-input" class="col-xs-2 col-md-2 col-md-offset-5">Fecha:</label>
      <div class=" col-xs-10 col-md-4">
        <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-         <input type="date" id="txtfecha" name="fecha" class="form-control" value="<?php echo date("Y-n-j");?>" required/>
+         <input type="date" id="txtfecha" name="fecha" class="form-control" value="<?php echo date("Y-m-d");?>" required/>
        </div> 
      </div>
    </div>

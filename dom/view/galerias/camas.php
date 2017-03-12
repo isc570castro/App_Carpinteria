@@ -1,7 +1,9 @@
 <?php
 session_start();
 $seguridad = $_SESSION['seguridad'];
-if (!isset($seguridad)){
+$usuario = $_SESSION['login'];
+
+if ($usuario != 'admin'){
 header ('Location: camasU.php');
 }
 $usuario = $_SESSION['login'];
@@ -26,6 +28,9 @@ $sql2 = mysql_query("SELECT * FROM catalogo WHERE categoria='camas';" , $link) o
   <link href="../../src/bootstrap/font-awesome/css/font-awesome.css" rel="stylesheet">
   <link href="../../src/bootstrap/css/sb-admin.css" rel="stylesheet">
   <style>
+  img.logo{
+    width: 40%;
+  }
   </style>
 </head>
 <body>
@@ -115,6 +120,7 @@ $sql2 = mysql_query("SELECT * FROM catalogo WHERE categoria='camas';" , $link) o
     <img src="<?php echo $ruta;?>" style="width:100%" onClick="openModal();currentSlide(<?php echo $i; ?>)" class="hover-shadow cursor">
      <div class="caption">
      <center>
+     <h5 style="color:blue;" id="eliminar">Id de producto: <?php echo $imagenes['idCatalogo']?></h5>
     <p id="eliminar"><a href="eliminarFoto.php?idCatalogo=<?php echo $imagenes['idCatalogo'];?>&ubicacion=camas" class="btn btn-default" role="button" id="btnEliminar">Eliminar</a></p>
     </center>
     </div>

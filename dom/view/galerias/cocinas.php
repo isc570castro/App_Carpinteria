@@ -1,7 +1,9 @@
 <?php
 session_start();
 $seguridad = $_SESSION['seguridad'];
-if (!isset($seguridad)){
+$usuario = $_SESSION['login'];
+
+if ($usuario != 'admin'){
 header ('Location: cocinasU.php');
 }
 $usuario = $_SESSION['login'];
@@ -20,13 +22,15 @@ $sql2 = mysql_query("SELECT * FROM catalogo WHERE categoria='cocinas';" , $link)
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
    <title>Catálogo</title>
   <link rel="stylesheet" type="text/css" href="../../css/diseno.css" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../../css/menus.css" media="screen" />
   <link rel="stylesheet" type="text/css" href="../../css/formularios.css" media="screen" />
   <link rel="stylesheet" type="text/css" href="../../css/galeriaFotos.css" media="screen" />
   <link href="../../src/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../../src/bootstrap/font-awesome/css/font-awesome.css" rel="stylesheet">
   <link href="../../src/bootstrap/css/sb-admin.css" rel="stylesheet">
   <style>
+  img.logo{
+    width: 40%;
+  }
   </style>
 </head>
 <body>
@@ -116,6 +120,7 @@ $sql2 = mysql_query("SELECT * FROM catalogo WHERE categoria='cocinas';" , $link)
     <img src="<?php echo $ruta;?>" style="width:100%" onClick="openModal();currentSlide(<?php echo $i; ?>)" class="hover-shadow cursor">
      <div class="caption">
      <center>
+     <h5 style="color:blue;" id="eliminar">Id de producto: <?php echo $imagenes['idCatalogo']?></h5>
     <p id="eliminar"><a href="eliminarFoto.php?idCatalogo=<?php echo $imagenes['idCatalogo'];?>&ubicacion=cocinas" class="btn btn-default" role="button" id="btnEliminar">Eliminar</a></p>
     </center>
     </div>

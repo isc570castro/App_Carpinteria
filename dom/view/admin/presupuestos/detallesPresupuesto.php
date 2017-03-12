@@ -430,8 +430,22 @@
 </div>
 </div>
  <legend><font size="4"> Otros</font></legend>
-<div class="form-group row">
+ <div class="form-group row">
   <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label col-md-offset-8">Total de herrajes</label>
+  <div class=" col-xs-10 col-md-2 ">
+   <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+    <input class="form-control" type="text" id="montoTotalProductos" value="<?php echo $rows2['montoTotalProductos'];?>" placeholder="0.00" name="montoTotalProductos">
+  </div> 
+</div>
+<div class=" col-xs-10 col-md-1">
+ <div class="input-group"> 
+   <a href="costoenProductos.php?idPresupuesto=<?php echo $idPresupuesto; ?>">
+     <span class="glyphicon glyphicon-new-window"></span></a>
+   </div> 
+ </div>
+</div>
+<div class="form-group row">
+  <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label col-md-offset-8">Total de pintura</label>
   <div class=" col-xs-10 col-md-2 ">
    <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
     <input class="form-control" type="text" id="montoTotalProductos" value="<?php echo $rows2['montoTotalProductos'];?>" placeholder="0.00" name="montoTotalProductos">

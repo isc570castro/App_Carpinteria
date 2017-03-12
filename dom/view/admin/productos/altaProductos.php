@@ -131,6 +131,19 @@
   </div>
 </div>
 <div class="form-group row">
+ <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Tipo</label>
+ <div class=" col-xs-10 col-md-11">
+   <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
+    <select class="form-control" id="tipo" name="tipo">
+     <option selected="selected" value="">Selecciona el tipo de producto...</option>
+     <option value="Herraje" >Herraje</option>
+     <option value="Pintura" >Pintura</option>
+     <option value="Otro" >Otro</option>
+   </select> 
+ </div> 
+</div>
+</div>
+<div class="form-group row">
  <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Marca</label>
  <div class=" col-xs-10 col-md-11">
    <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
@@ -145,7 +158,7 @@
 </div>
 <div class="form-group row">
   <div class="form-group has-feedback">
-    <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Presio</label>
+    <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Precio</label>
     <div class=" col-xs-10 col-md-11">
      <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
       <input class="form-control" type="number" id="precio" placeholder="0.00" name="precio" onKeyPress="return solonumeros(event)">

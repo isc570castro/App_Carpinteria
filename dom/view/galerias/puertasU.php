@@ -1,5 +1,4 @@
 <?php
-$usuario = $_SESSION['login'];
 include "../../../model/conexion.php";
 $objConex = new Conexion();
 $link=$objConex->conectarse();
@@ -21,6 +20,9 @@ $sql2 = mysql_query("SELECT * FROM catalogo WHERE categoria='puertas';" , $link)
   <link href="../../src/bootstrap/font-awesome/css/font-awesome.css" rel="stylesheet">
   <link href="../../src/bootstrap/css/sb-admin.css" rel="stylesheet">
   <style>
+  img.logo{
+    width: 40%;
+  }
   </style>
 </head>
 <body>
@@ -86,7 +88,14 @@ $sql2 = mysql_query("SELECT * FROM catalogo WHERE categoria='puertas';" , $link)
    $ruta = "imagenes/" . $imagenes['imagen'];
    ?>  
   <div class="col-md-3 col-xs-10">
+  <div class="thumbnail">
     <img src="<?php echo $ruta;?>" style="width:100%" onClick="openModal();currentSlide(<?php echo $i; ?>)" class="hover-shadow cursor">
+     <div class="caption">
+     <center>
+    <h5 style="color:blue;" id="eliminar">Id de producto: <?php echo $imagenes['idCatalogo']?></h5>
+    </center>
+    </div>
+    </div>
   </div>
   <?php
   $i++; 

@@ -24,6 +24,15 @@ header ('Location:../../../index.html');
   <link href="../../src/bootstrap/font-awesome/css/font-awesome.css" rel="stylesheet">
   <link href="../../bootstrap/css/sb-admin.css" rel="stylesheet">
   <style type="text/css">
+      form{
+    background-color: white;
+    width: 90%;
+    border: 1px solid #c4c4c4;
+    padding-right: 20px;
+    padding-left: 5%;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  }
   #divfoto{
     height: 2px;  }
   #divfoto1{
@@ -131,7 +140,8 @@ header ('Location:../../../index.html');
       <option value="mesas">Mesas</option>
       <option value="buros">Buros</option>
       <option value="escritorios">Escritorios</option>
-      <option value="cuadros">Cuadros</option>
+      <option value="puertas">Puertas</option>
+      <option value="marcos">Cuadros</option>
        <option value="otros">Otros</option>
    </select> 
   </div>

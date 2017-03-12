@@ -25,6 +25,9 @@ $sql2 = mysql_query("SELECT * FROM catalogo WHERE categoria='cocinas';" , $link)
    padding-left: 22%;
    margin-top: 5%;
   }
+  img.logo{
+    width: 40%;
+  }
   </style>
 </head>
 <body>
@@ -90,8 +93,15 @@ $sql2 = mysql_query("SELECT * FROM catalogo WHERE categoria='cocinas';" , $link)
                $ruta = "imagenes/" . $imagenes['imagen'];
                ?>  
                <div class="col-md-3 col-xs-10">
-                <img src="<?php echo $ruta;?>" style="width:100%" onClick="openModal();currentSlide(<?php echo $i; ?>)" class="hover-shadow cursor">
-              </div>
+  <div class="thumbnail">
+    <img src="<?php echo $ruta;?>" style="width:100%" onClick="openModal();currentSlide(<?php echo $i; ?>)" class="hover-shadow cursor">
+     <div class="caption">
+     <center>
+    <h5 style="color:blue;" id="eliminar">Id de producto: <?php echo $imagenes['idCatalogo']?></h5>
+    </center>
+    </div>
+    </div>
+  </div>
               <?php
               $i++; 
             }

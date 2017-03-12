@@ -15,6 +15,15 @@
 		#registro{
 			width: 100%;
 		}
+    form{
+    background-color: white;
+    width: 90%;
+    border: 1px solid #c4c4c4;
+    padding-right: 20px;
+    padding-left: 5%;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  }
 	</style>
 </head>
 <body>
@@ -63,22 +72,12 @@
 <br><br>
 <div class="row">
   <div class="col-md-6 col-md-offset-3 col-xs-11 col-xs-offset-1">
-  <form class="frmRegistro" action="../../controller/sesiones/registraUsuario.php" method="POST" enctype="multipart/form-data" name="frmaltaClientes" id="frmRegistro">
+  <form class="frmRegistro" onsubmit="return validarUsuario();" action="../../controller/sesiones/registraUsuario.php" method="POST" enctype="multipart/form-data" name="frmaltaClientes" id="frmRegistro">
   <h1>Registro de usuarios</h1>
   <legend></legend>
-      <div class="form-group row">
-     <div class="form-group has-feedback">
-  <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Nombre</label>
-   <div class=" col-xs-10 col-md-10">
-   <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input class="form-control" type="text" id="nombre" placeholder="Introdusca su nombre" name="nombreUsuario" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+">
-  </div> 
-</div>
-</div>
-</div>
     <div class="form-group row">
      <div class="form-group has-feedback">
-  <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Usuario</label>
+  <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Usuario:</label>
    <div class=" col-xs-10 col-md-10">
    <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
     <input class="form-control" type="text" id="usuario" placeholder="Introdusca un usuario" name="usuario" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+">
@@ -88,16 +87,26 @@
 </div>
 <div class="form-group row">
 <div class="form-group has-feedback">
-  <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Contraseña</label>
+  <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Contraseña:</label>
  <div class=" col-xs-10 col-md-10">
-    <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-    <input class="form-control" type="password" id="correo" placeholder="Introdusca una contraseña" name="password">
+    <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+    <input class="form-control" type="password" id="password" placeholder="Introdusca una contraseña" name="password">
+  </div> 
+</div>
+</div>
+</div>
+<div class="form-group row">
+<div class="form-group has-feedback">
+  <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Confirmar contraseña:</label>
+ <div class=" col-xs-10 col-md-10">
+    <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+    <input class="form-control" type="password" id="password2" placeholder="Confirme la contraseña" name="password2">
   </div> 
 </div>
 </div>
 </div>
 <div class="row">
-  <div class="col-md-3 col-md-offset-9 col-xs-3 col-xs-offset-9" ><button type="submit" class="btn btn-primary" id="registrar"> Registrar </button></div>
+  <div class="col-md-3 col-md-offset-9 col-xs-3 col-xs-offset-9" ><button type="submit"  class="btn btn-primary" id="registrar"> Registrar </button></div>
 </div>
  <br>
 </form>
@@ -147,7 +156,13 @@ $('#frmRegistro').bootstrapValidator({
         },
          password: {
             validators: {
-                notEmpty: { message: 'La contrasea es obligatoria' },
+                notEmpty: { message: 'La contraseña es obligatoria' },
+               // emailAddress: { message: 'E-mail no valido' }
+            }
+        },
+         password2: {
+            validators: {
+                notEmpty: { message: 'La validación de contraseña es obligatoria' },
                // emailAddress: { message: 'E-mail no valido' }
             }
         },
@@ -164,23 +179,72 @@ $('#frmRegistro').bootstrapValidator({
 });
 });
 </script>
-<script  type='text/javascript'>
-  function solonumeros(e){
-  key=e.keyCode || e.which;
-  teclado=String.fromCharCode(key);
-  numeros="0123456789";
-  especiales="8-37-37-45"; //array
-  teclado_especial=false;
-  for(var i in especiales){
-    if(key==especiales[i]){
-      teclado_especial=true;
-    }
-  }
-  if (numeros.indexOf(teclado)==-1 && !teclado_especial){
-    return false;
-    alert('Solo números');
-  }
+<script >
+   function validarUsuario(){
+      /* var usuario = $("input#usuario").val();
+    $.post("verificausuario.php", {usuario: usuario}, function(mensaje) {
+      if(mensaje>=1){
+        alert('El usuario '+usuario+' ya existe, por favor intenta con otro');
+        return false;
+      }
+    }); */
+       var pass1 = $("input#password").val();
+       var pass2 = $("input#password2").val();
+      if(pass1 != pass2){
+        alert("Las contraseñas no coinciden");
+        return false; 
+      }
+   
 }
+/*
+$(document).on('ready',funcPrincipal);
+function funcPrincipal()
+{
+  $('#frmRegistro').on('submit',ejecutarAjax);
+
+}
+
+
+function ejecutarAjax(event)
+{
+  var datosEnviados=
+  {
+    'usuario' : $('#usuario').val(),
+    'password'  : $('#password').val(),
+    'password2'  : $('#password2').val()
+  };
+  $.ajax({
+    type    : 'POST',
+    url     : '../../controller/sesiones/registraUsuario.php',
+    data    : datosEnviados,
+    dataType  : 'json',
+    encode    : true
+  })
+  .done(function(datos){
+    //ESPECIFICAR COMO ACTUAR CON LOS DATOS RECIBIDOS
+    if(datos.exito)
+      alert(datos.mensaje);
+    else{
+      if(datos.errores.usuario)
+        alert(datos.errores.usuario);
+      if(datos.errores.contra)
+        alert(datos.errores.contra);
+      }
+  });
+  event.preventDefault();
+}
+
+function funcVerificar()
+{
+  alert('entra');
+    var usuario=$('#usuario').val()
+    $.get("../../controller/sesiones/registraUsuario.php?usuario="+usuario,function(data){
+    if (data==1){
+     alert('El usuario'+usuario+' ya existe, por favor intenta con otro');
+    }
+    });
+    $('#usuario').focus();
+}*/
   </script>
 </html>
  

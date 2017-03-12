@@ -19,5 +19,4 @@ if (!$sql){
 			</script>";
 }
 mysql_close($link);
-mysql_close($link);
 ?>

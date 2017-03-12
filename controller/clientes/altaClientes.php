@@ -16,7 +16,7 @@ if (!$sql){
 			alert('Datos guardados');
 			</script>";
 	echo 	"<script type='text/javascript'>
-			window.location='../../dom/view/admin/Clientes/showClientes.php'
+			window.location='../../dom/view/admin/Clientes/showClientes.php';
 			</script>";
     mysql_close($link);
 }

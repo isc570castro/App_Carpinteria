@@ -127,12 +127,25 @@ $rows2 = mysql_fetch_array($sqlproveedores);
     <legend><font size="5"> Datos del producto: </font></legend>
       <div class="form-group row">
          <div class="form-group has-feedback">
-  <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Descripcion</label>
+  <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Descripción</label>
    <div class=" col-xs-10 col-md-11">
    <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
     <input class="form-control" type="text" id="descripcion" placeholder="Descripción del producto" name="descripcion" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+" value="<?php echo $rows['descripcion'];?>">
   </div> 
 </div>
+</div>
+</div>
+<div class="form-group row">
+ <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Tipo</label>
+ <div class=" col-xs-10 col-md-11">
+   <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
+    <select class="form-control" id="tipo" name="tipo">
+     <option selected="selected" value="<?php echo $rows['tipo']; ?>"><?php echo $rows['tipo']; ?></option>
+     <option value="Herraje" >Herraje</option>
+     <option value="Pintura" >Pintura</option>
+     <option value="Otro" >Otro</option>
+   </select> 
+ </div> 
 </div>
 </div>
 <div class="form-group row">
