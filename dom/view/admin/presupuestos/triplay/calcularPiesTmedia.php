@@ -197,7 +197,7 @@ $row = mysql_fetch_array($sqlSumaPresios);*/
              <td align="center"><?php echo $rows ['ancho']; ?></td>
              <td align="center"><?php echo $rows ['largo']; ?></td>
              <td align="center"><?php echo $rows ['cantPies']; ?></td>
-             <td align="center"><a href="../../../../controller/presupuestos/triplay/bajaRegistroTriplayMedia.php?noRegistro=<?php echo $rows ['noRegistro'];?>&idPresupuesto=<?php echo $idPresupuesto; ?>"><span class="glyphicon glyphicon-trash"></span></a></td>
+             <td align="center"><a href="../../../../../controller/presupuestos/triplay/bajaRegistroTriplay.php?noRegistro=<?php echo $rows ['noRegistro'];?>&idPresupuesto=<?php echo $idPresupuesto; ?>&tipoMadera=triplayMedia"><span class="glyphicon glyphicon-trash"></span></a></td>
            </tr>
            <?php  
          }

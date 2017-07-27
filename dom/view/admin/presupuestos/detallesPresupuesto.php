@@ -27,15 +27,15 @@
     <link href="../../../src/bootstrap/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="../../../bootstrap/css/sb-admin.css" rel="stylesheet">
     <style type="text/css">
-        form{
-    background-color: white;
-    width: 90%;
-    border: 1px solid #c4c4c4;
-    padding-right: 20px;
-    padding-left: 5%;
-    height: auto;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  }
+      form{
+        background-color: white;
+        width: 90%;
+        border: 1px solid #c4c4c4;
+        padding-right: 20px;
+        padding-left: 5%;
+        height: auto;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+      }
       div.container-fluid{
         font-size: 15px;
       }
@@ -148,11 +148,11 @@
 <div class="row">
   <div class="col-md-11 col-md-offset-1">
     <form id="frmRegistro" class="registro" action="../../../../controller/presupuestos/actualizarPresupuesto.php?idPresupuesto=<?php echo $idPresupuesto;?>" method="POST" enctype="multipart/form-data" name="frmRegistro" >
-    <div class="row">
-    <div class="col-md-11">
-      <h1>Detalles de presupuesto</h1>
-      </div>
-     
+      <div class="row">
+        <div class="col-md-11">
+          <h1>Detalles de presupuesto</h1>
+        </div>
+
       </div>
       <legend></legend>
       <legend><font size="5"> Datos generales</font></legend>
@@ -193,8 +193,8 @@
   </div> 
 </div>
 </div>
- <font size="5"> Cuenta de gastos</font>
-  <legend><font size="4"> Madera</font></legend>
+<font size="5"> Cuenta de gastos</font>
+<legend><font size="4"> Madera</font></legend>
 <div class="form-group row">
   <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Madera de pino:</label>
   <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Total de pies:</label>
@@ -221,8 +221,8 @@
      <span class="glyphicon glyphicon-new-window"></span></a>
    </div> 
  </div>
- </div>
- <div class="form-group row">
+</div>
+<div class="form-group row">
   <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Madera de cahoba:</label>
   <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Total de pies:</label>
   <div class=" col-xs-10 col-md-2">
@@ -248,8 +248,8 @@
      <span class="glyphicon glyphicon-new-window"></span></a>
    </div> 
  </div>
- </div>
- <div class="form-group row">
+</div>
+<div class="form-group row">
   <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Madera de banak:</label>
   <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Total de pies:</label>
   <div class=" col-xs-10 col-md-2">
@@ -275,8 +275,8 @@
      <span class="glyphicon glyphicon-new-window"></span></a>
    </div> 
  </div>
- </div>
-  <div class="form-group row">
+</div>
+<div class="form-group row">
   <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label col-md-offset-8">Total de madera:</label>
   <div class=" col-xs-10 col-md-2">
    <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
@@ -284,8 +284,8 @@
   </div> 
 </div>
 </div>
-      <legend><font size="4"> Triplay</font></legend>
-      <div class="form-group row">
+<legend><font size="4"> Triplay</font></legend>
+<div class="form-group row">
   <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Triplay de 3 mm:</label>
   <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Total de pies:</label>
   <div class=" col-xs-10 col-md-2">
@@ -311,8 +311,8 @@
      <span class="glyphicon glyphicon-new-window"></span></a>
    </div> 
  </div>
- </div>
- <div class="form-group row">
+</div>
+<div class="form-group row">
   <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Triplay de 6 mm:</label>
   <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Total de pies:</label>
   <div class=" col-xs-10 col-md-2">
@@ -338,8 +338,8 @@
      <span class="glyphicon glyphicon-new-window"></span></a>
    </div> 
  </div>
- </div>
- <div class="form-group row">
+</div>
+<div class="form-group row">
   <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Triplay de 1/2":</label>
   <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Total de pies:</label>
   <div class=" col-xs-10 col-md-2">
@@ -365,8 +365,8 @@
      <span class="glyphicon glyphicon-new-window"></span></a>
    </div> 
  </div>
- </div>
- <div class="form-group row">
+</div>
+<div class="form-group row">
   <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Triplay de 5/8":</label>
   <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Total de pies:</label>
   <div class=" col-xs-10 col-md-2">
@@ -392,8 +392,8 @@
      <span class="glyphicon glyphicon-new-window"></span></a>
    </div> 
  </div>
- </div>
-  <div class="form-group row">
+</div>
+<div class="form-group row">
   <label for="example-search-input" class="col-xs-2 col-md-2 col-form-label">Triplay de 3/4":</label>
   <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Total de pies:</label>
   <div class=" col-xs-10 col-md-2">
@@ -420,8 +420,8 @@
      <span class="glyphicon glyphicon-new-window"></span></a>
    </div> 
  </div>
- </div>
- <div class="form-group row">
+</div>
+<div class="form-group row">
   <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label col-md-offset-8">Total de triplay:</label>
   <div class=" col-xs-10 col-md-2">
    <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
@@ -429,8 +429,8 @@
   </div> 
 </div>
 </div>
- <legend><font size="4"> Otros</font></legend>
- <div class="form-group row">
+<legend><font size="4"> Otros</font></legend>
+<div class="form-group row">
   <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label col-md-offset-8">Total de herrajes</label>
   <div class=" col-xs-10 col-md-2 ">
    <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
@@ -448,7 +448,7 @@
   <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label col-md-offset-8">Total de pintura</label>
   <div class=" col-xs-10 col-md-2 ">
    <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
-    <input class="form-control" type="text" id="montoTotalProductos" value="<?php echo $rows2['montoTotalProductos'];?>" placeholder="0.00" name="montoTotalProductos">
+    <input class="form-control" type="text" id="totalPintura" value="<?php echo $rows2['pintura'];?>" placeholder="0.00" name="totalPintura">
   </div> 
 </div>
 <div class=" col-xs-10 col-md-1">
@@ -467,11 +467,11 @@
 </div>
 <div class=" col-xs-10 col-md-1">
  <div class="input-group"> 
-     <span class="glyphicon glyphicon-hand-left" onclick="manoObra();" style="cursor:pointer;" data-toggle="tooltip" title="Calcular el costo de mano de obra"></span>
-   </div> 
- </div>
+   <span class="glyphicon glyphicon-hand-left" onclick="manoObra();" style="cursor:pointer;" data-toggle="tooltip" title="Calcular el costo de mano de obra"></span>
+ </div> 
 </div>
- <legend><font size="4"> Total</font></legend>
+</div>
+<legend><font size="4"> Total</font></legend>
 <div class="form-group row">
   <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label col-md-offset-8">MontoTotal</label>
   <div class=" col-xs-10 col-md-2 ">
@@ -481,15 +481,15 @@
 </div>
 <div class=" col-xs-10 col-md-1">
  <div class="input-group"> 
-     <span class="glyphicon glyphicon-hand-left" onclick="sumatoria();" style="cursor:pointer;" data-toggle="tooltip" title="Calcular el monto total"></span>
-   </div> 
- </div>
+   <span class="glyphicon glyphicon-hand-left" onclick="sumatoria();" style="cursor:pointer;" data-toggle="tooltip" title="Calcular el monto total"></span>
+ </div> 
 </div>
- <legend><font size="4"> </font></legend>
+</div>
+<legend><font size="4"> </font></legend>
 <div class="row">
   <div class="col-md-8"></div>
   <div class="col-md-1"><button type="submit" class="btn btn-primary" id="registrar"> 
-  <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span> </button>
+    <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span> </button>
   </div>
   <div class="col-md-1"><a href=""><button class="btn btn-primary" id="registrar"> <span class="glyphicon glyphicon-floppy-remove" aria-hidden="true"></span> </button></a></div>
   <div class="col-md-2"><a href="showPresupuestos.php"><input type="button" class="btn btn-primary" id="registrar" value="Terminar"></a></div>
@@ -556,7 +556,7 @@
   $("#precioPino").val((montoTotal).toFixed(2));
   totalMadera();
 }
- function calcularTotalCahoba(){
+function calcularTotalCahoba(){
   var pies = $("#totalPiesCahoba").val();
   if (isNaN(pies)){
     pies=0;
@@ -569,7 +569,7 @@
   $("#precioCahoba").val((montoTotal).toFixed(2));
   totalMadera();
 }
- function calcularTotalBanak(){
+function calcularTotalBanak(){
   var pies = $("#totalPiesBanak").val();
   if (isNaN(pies)){
     pies=0;
@@ -582,27 +582,27 @@
   $("#precioBanak").val((montoTotal).toFixed(2));
   totalMadera();
 }
- function totalMadera(){
-        var  precioPino=$("#precioPino").val();
+function totalMadera(){
+  var  precioPino=$("#precioPino").val();
   precioPino=parseFloat(precioPino);
-   if (isNaN(precioPino)){
+  if (isNaN(precioPino)){
     precioPino=0;
   }
-    var  precioCahoba=$("#precioCahoba").val();
+  var  precioCahoba=$("#precioCahoba").val();
   precioCahoba=parseFloat(precioCahoba);
-   if (isNaN(precioCahoba)){
+  if (isNaN(precioCahoba)){
     precioCahoba=0;
   }
-    var precioBanak=$("#precioBanak").val();
+  var precioBanak=$("#precioBanak").val();
   precioBanak=parseFloat(precioBanak);
   if (isNaN(precioBanak)){
     precioBanak=0;
   }
   var totalMadera=precioBanak+precioPino+precioCahoba;
-    $("#totalMadera").val((totalMadera).toFixed(2));
-    sumatoria();
- }
-   function calcularTotalTtres(){
+  $("#totalMadera").val((totalMadera).toFixed(2));
+  sumatoria();
+}
+function calcularTotalTtres(){
   var pies = $("#totalPiesTtres").val();
   if (isNaN(pies)){
     pies=0;
@@ -611,11 +611,11 @@
   if (isNaN(precio)){
     precio=0;
   }
-    var montoTotal = pies*precio;
+  var montoTotal = pies*precio;
   $("#montoTotalTtres").val((montoTotal).toFixed(2));
   totalTriplay();
 }
-     function calcularTotalTseis(){
+function calcularTotalTseis(){
   var pies = $("#totalPiesTseis").val();
   if (isNaN(pies)){
     pies=0;
@@ -624,11 +624,11 @@
   if (isNaN(precio)){
     precio=0;
   }
-    var montoTotal = pies*precio;
+  var montoTotal = pies*precio;
   $("#montoTotalTseis").val((montoTotal).toFixed(2));
   totalTriplay();
 }
-     function calcularTotalTunaymedia(){
+function calcularTotalTunaymedia(){
   var pies = $("#totalPiesTunaymedia").val();
   if (isNaN(pies)){
     pies=0;
@@ -637,11 +637,11 @@
   if (isNaN(precio)){
     precio=0;
   }
-    var montoTotal = pies*precio;
+  var montoTotal = pies*precio;
   $("#montoTotalTunaymedia").val((montoTotal).toFixed(2));
   totalTriplay();
 }
-     function calcularTotalTtresCuartos(){
+function calcularTotalTtresCuartos(){
   var pies = $("#totalPiesTtresCuartos").val();
   if (isNaN(pies)){
     pies=0;
@@ -654,7 +654,7 @@
   $("#montoTotalTtresCuartos").val((montoTotal).toFixed(2));
   totalTriplay();
 }
-   function calcularTotalTcincoOctavos(){
+function calcularTotalTcincoOctavos(){
   var pies = $("#totalPiesTcincoOctavos").val();
   if (isNaN(pies)){
     pies=0;
@@ -667,81 +667,86 @@
   $("#montoTotalTcincoOctavos").val((montoTotal).toFixed(2));
   totalTriplay();
 }
-  function totalTriplay(){
-        var  montoTotalTtres=$("#montoTotalTtres").val();
+function totalTriplay(){
+  var  montoTotalTtres=$("#montoTotalTtres").val();
   montoTotalTtres=parseFloat(montoTotalTtres);
-   if (isNaN(montoTotalTtres)){
+  if (isNaN(montoTotalTtres)){
     montoTotalTtres=0;
   }
-       var  montoTotalTseis=$("#montoTotalTseis").val();
+  var  montoTotalTseis=$("#montoTotalTseis").val();
   montoTotalTseis=parseFloat(montoTotalTseis);
-   if (isNaN(montoTotalTseis)){
+  if (isNaN(montoTotalTseis)){
     montoTotalTseis=0;
   }
-         var  montoTotalTunaymedia=$("#montoTotalTunaymedia").val();
+  var  montoTotalTunaymedia=$("#montoTotalTunaymedia").val();
   montoTotalTunaymedia=parseFloat(montoTotalTunaymedia);
-   if (isNaN(montoTotalTunaymedia)){
+  if (isNaN(montoTotalTunaymedia)){
     montoTotalTunaymedia=0;
   }
-      var  montoTotalTcincoOctavos=$("#montoTotalTcincoOctavos").val();
+  var  montoTotalTcincoOctavos=$("#montoTotalTcincoOctavos").val();
   montoTotalTcincoOctavos=parseFloat(montoTotalTcincoOctavos);
-   if (isNaN(montoTotalTcincoOctavos)){
+  if (isNaN(montoTotalTcincoOctavos)){
     montoTotalTcincoOctavos=0;
   }
-        var  montoTotalTtresCuartos=$("#montoTotalTtresCuartos").val();
+  var  montoTotalTtresCuartos=$("#montoTotalTtresCuartos").val();
   montoTotalTtresCuartos=parseFloat(montoTotalTtresCuartos);
-   if (isNaN(montoTotalTtresCuartos)){
+  if (isNaN(montoTotalTtresCuartos)){
     montoTotalTtresCuartos=0;
   }
   var totalTriplay=montoTotalTtres+montoTotalTseis+montoTotalTunaymedia+montoTotalTcincoOctavos+montoTotalTtresCuartos;
-    $("#totalTriplay").val((totalTriplay).toFixed(2));
-    sumatoria();
- }
- function manoObra(){
-   var totalMadera=$("#totalMadera").val();
-  totalMadera=parseFloat(totalMadera);
-  if (isNaN(totalMadera)){
-    totalMadera=0;
-  }
-   var totalTriplay=$("#totalTriplay").val();
-  totalTriplay=parseFloat(totalTriplay);
-  if (isNaN(totalTriplay)){
-    totalTriplay=0;
-  }
-   var montoTotalProductos=$("#montoTotalProductos").val();
-  montoTotalProductos=parseFloat(montoTotalProductos);
-  if (isNaN(montoTotalProductos)){
-    montoTotalProductos=0;
-  }
-  var manoObra=totalMadera+montoTotalProductos+totalTriplay;
-    $("#manoObra").val((manoObra).toFixed(2));
+  $("#totalTriplay").val((totalTriplay).toFixed(2));
+  sumatoria();
+}
+function manoObra(){
+ var totalMadera=$("#totalMadera").val();
+ totalMadera=parseFloat(totalMadera);
+ if (isNaN(totalMadera)){
+  totalMadera=0;
+}
+var totalTriplay=$("#totalTriplay").val();
+totalTriplay=parseFloat(totalTriplay);
+if (isNaN(totalTriplay)){
+  totalTriplay=0;
+}
+var montoTotalProductos=$("#montoTotalProductos").val();
+montoTotalProductos=parseFloat(montoTotalProductos);
+if (isNaN(montoTotalProductos)){
+  montoTotalProductos=0;
+}
+var manoObra=totalMadera+montoTotalProductos+totalTriplay;
+$("#manoObra").val((manoObra).toFixed(2));
 
- sumatoria();
- }
-  function sumatoria(){
-     var totalMadera=$("#totalMadera").val();
-  totalMadera=parseFloat(totalMadera);
-  if (isNaN(totalMadera)){
-    totalMadera=0;
-  }
-   var totalTriplay=$("#totalTriplay").val();
-  totalTriplay=parseFloat(totalTriplay);
-  if (isNaN(totalTriplay)){
-    totalTriplay=0;
-  }
-   var montoTotalProductos=$("#montoTotalProductos").val();
-  montoTotalProductos=parseFloat(montoTotalProductos);
-  if (isNaN(montoTotalProductos)){
-    montoTotalProductos=0;
-  }
-     var manoObra=$("#manoObra").val();
-  manoObra=parseFloat(manoObra);
-  if (isNaN(manoObra)){
-    manoObra=0;
-  }
- var montoTotal=totalMadera+montoTotalProductos+totalTriplay+manoObra;
-    $("#montoTotal").val((montoTotal).toFixed(2));
-  }
+sumatoria();
+}
+function sumatoria(){
+ var totalMadera=$("#totalMadera").val();
+ totalMadera=parseFloat(totalMadera);
+ if (isNaN(totalMadera)){
+  totalMadera=0;
+}
+var totalTriplay=$("#totalTriplay").val();
+totalTriplay=parseFloat(totalTriplay);
+if (isNaN(totalTriplay)){
+  totalTriplay=0;
+}
+var montoTotalProductos=$("#montoTotalProductos").val();
+montoTotalProductos=parseFloat(montoTotalProductos);
+if (isNaN(montoTotalProductos)){
+  montoTotalProductos=0;
+}
+var manoObra=$("#manoObra").val();
+manoObra=parseFloat(manoObra);
+if (isNaN(manoObra)){
+  manoObra=0;
+}
+var pintura=$("#totalPintura").val();
+manoObra=parseFloat(manoObra);
+if (isNaN(manoObra)){
+  manoObra=0;
+}
+var montoTotal=totalMadera+montoTotalProductos+totalTriplay+manoObra;
+$("#montoTotal").val((montoTotal).toFixed(2));
+}
 
 </script>
 </html>

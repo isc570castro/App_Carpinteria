@@ -9,7 +9,7 @@ $sacaidCliente= mysql_query("SELECT idCliente FROM clientes WHERE nombreCliente=
 $rows = mysql_fetch_array($sacaidCliente); 
 $idCliente=$rows['idCliente']; 
 $sql = mysql_query("INSERT INTO Presupuesto
-		VALUES (null,'$descripcion','$detalles','$idCliente','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00')", $link) or die(mysql_error());
+		VALUES (null,'$descripcion','$detalles','$idCliente','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00','0.00')", $link) or die(mysql_error());
 /*$query = mysql_query("SELECT idPresupuesto FROM presupuesto", $link) or die(mysql_error());
 $rows2 = mysql_fetch_array($query);
 $idPresupuesto=$rows2['idPresupuesto'];

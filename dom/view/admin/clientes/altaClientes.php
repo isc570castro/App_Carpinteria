@@ -121,7 +121,7 @@ header ('Location:../../../../index.html');
   <label for="example-search-input" class="col-xs-2 col-md-1 col-form-label">Nombre</label>
    <div class=" col-xs-10 col-md-11">
    <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input class="form-control" type="text" id="nombre" placeholder="Nombre" name="nombreCliente" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+">
+    <input autofocus class="form-control" type="text" id="nombre" placeholder="Nombre" name="nombreCliente" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+">
   </div> 
 </div>
 </div>
